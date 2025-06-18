@@ -10,5 +10,145 @@
 </head>
 
 <body>
-    <p>Hello World</p>
+
+    <div class="autoplayer">
+        <div class="buttondiv">
+            <button id="button">⏯</button>
+        </div>
+
+        <audio loop autoplay id="player">
+            <source src="https://lemonfloe.github.io/assets/music/background_audio.ogg" type="audio/ogg">
+        </audio>
+
+        <a id="nowPlaying" target="_blank" href="https://www.youtube.com/watch?v=szdWkrRHpAw">Now Playing:<br>Countless
+            grains arranged
+            in a grid are waving randomly<br>MΣΣBΣΣ a.k.a KAZUHIRO ABO</a>
+
+        <script>
+            const audio = document.getElementById('player');
+            audio.volume = 0.001;
+
+            let fadeInInterval;
+            const fadeInDuration = 500;
+
+            function fadeIn() {
+                let volume = 0.001;
+                const increment = 0.01;
+                const intervalTime = fadeInDuration / (1 / increment);
+
+                fadeInInterval = setInterval(() => {
+                    volume += increment;
+                    audio.volume = volume;
+                    if (volume >= 1) {
+                        clearInterval(fadeInInterval);
+                    }
+                }, intervalTime);
+            }
+
+            audio.play();
+            fadeIn();
+
+        </script>
+    </div>
+
+    <div id="bg"></div>
+    <div id="snowholder">
+        <div class="snow1"></div>
+        <div class="snow2"></div>
+        <div class="snow3"></div>
+    </div>
+
+    <nav>
+        <button class="page-button">Home</button>
+        <button class="page-button">Profiles</button>
+        <button class="page-button">Creations</button>
+        <button class="page-button">Gaming</button>
+    </nav>
+
+    <div id="mainContainer">
+    </div>
 </body>
+
+<script>
+
+    const pageFiles = [
+        'homepage.html',
+        'profiles.html',
+        'creations.html',
+        'gaming.html'
+    ];
+
+    let currentPageIndex = null;
+    let currentPage = 0;
+
+    window.addEventListener("DOMContentLoaded", changeContent('homepage.html'), (currentPage = 0));
+
+    document.querySelectorAll(".page-button").forEach(function (button, index) {
+        button.addEventListener("click", async function () {
+            currentPageIndex = index;
+            const contentURL = pageFiles[currentPageIndex];
+            await fadeOut(mainContainer);
+            await changeContent(contentURL);
+            fadeIn(mainContainer);
+        });
+    });
+
+    function changeContent(contentURL) {
+        if (currentPage != currentPageIndex) {
+            fetch(contentURL)
+                .then(res => {
+                    return res.text();
+                })
+                .then(cont => {
+                    var divPlaceholder = document.getElementById('mainContainer');
+                    document.getElementById('mainContainer').innerHTML = "";
+                    divPlaceholder.insertAdjacentHTML("afterbegin", cont);
+                })
+                .then(currentPage = currentPageIndex);
+        }
+        else {
+            console.log('already here!');
+        }
+    };
+
+    function fadeOut(element) {
+        return new Promise((resolve) => {
+            let opacity = 1;
+
+            function fade() {
+                opacity -= 0.06;
+                if (opacity <= 0) {
+                    element.style.opacity = 0;
+                    resolve();
+                } else {
+                    element.style.opacity = opacity;
+                    requestAnimationFrame(fade);
+                }
+            }
+
+            fade();
+        });
+    }
+
+    function fadeIn(element) {
+        return new Promise((resolve) => {
+            let opacity = null;
+
+            function fade() {
+                opacity += 0.015;
+                if (opacity >= 1) {
+                    element.style.opacity = 1;
+                    resolve();
+                } else {
+                    element.style.opacity = opacity;
+                    requestAnimationFrame(fade);
+                }
+            }
+
+            fade();
+        });
+    }
+
+</script>
+
+</html>
