@@ -13,41 +13,47 @@
 
     <div class="autoplayer">
         <div class="buttondiv">
-            <button id="button">⏯</button>
+            <button id="bgaudioPlay">⏯</button>
         </div>
 
-        <audio loop autoplay id="player">
+        <audio loop id="player">
             <source src="https://lemonfloe.github.io/assets/music/background_audio.ogg" type="audio/ogg">
         </audio>
 
-        <a id="nowPlaying" target="_blank" href="https://www.youtube.com/watch?v=szdWkrRHpAw">Now Playing:<br>Countless
+        <a id="nowPlaying" target="_blank" href="https://www.youtube.com/watch?v=szdWkrRHpAw">Now
+            Playing:<br>Countless
             grains arranged
             in a grid are waving randomly<br>MΣΣBΣΣ a.k.a KAZUHIRO ABO</a>
 
         <script>
             const audio = document.getElementById('player');
-            audio.volume = 0.001;
+            audio.volume = 0;
 
             let fadeInInterval;
-            const fadeInDuration = 500;
+            const fadeInDuration = 1000;
 
-            function fadeIn() {
-                let volume = 0.001;
+            function audioFadeIn() {
+                let volume = 0;
                 const increment = 0.01;
-                const intervalTime = fadeInDuration / (1 / increment);
+                const steps = 1 / increment;
+                const intervalTime = fadeInDuration / steps;
 
                 fadeInInterval = setInterval(() => {
                     volume += increment;
-                    audio.volume = volume;
-                    if (volume >= 1) {
+                    if (volume > 1) {
+                        volume = 1;
+                        audio.volume = volume;
                         clearInterval(fadeInInterval);
+                    } else {
+                        audio.volume = volume;
                     }
                 }, intervalTime);
             }
 
-            audio.play();
-            fadeIn();
-
+            document.getElementById('bgaudioPlay').addEventListener('click', () => {
+                audio.play();
+                audioFadeIn();
+            })
         </script>
     </div>
 
