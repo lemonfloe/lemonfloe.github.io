@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/style.css?" rel="stylesheet" type="text/css" media="all" />
+    <link href="/style.css?v=20250619" rel="stylesheet" type="text/css" media="all" />
     <title>Cryosolis</title>
     <link rel="icon" type="image/x-icon" href="images/icons/favicon.png" />
 </head>
@@ -12,11 +12,11 @@
 <body>
 
     <div class="autoplayer">
-        <div class="buttondiv">
-            <button id="bgaudioPlay">⏯</button>
+        <div>
+            <button id="autoplayer__button">⏯</button>
         </div>
 
-        <audio loop id="player">
+        <audio loop id="autoplayer__audio">
             <source src="https://lemonfloe.github.io/assets/music/background_audio.ogg" type="audio/ogg">
         </audio>
 
@@ -26,7 +26,7 @@
             in a grid are waving randomly<br>MΣΣBΣΣ a.k.a KAZUHIRO ABO</a>
 
         <script>
-            const audio = document.getElementById('player');
+            const audio = document.getElementById('autoplayer__audio');
             audio.volume = 0;
 
             let fadeInInterval;
@@ -50,28 +50,28 @@
                 }, intervalTime);
             }
 
-            document.getElementById('bgaudioPlay').addEventListener('click', () => {
+            document.getElementById('autoplayer__button').addEventListener('click', () => {
                 audio.play();
                 audioFadeIn();
             })
         </script>
     </div>
 
-    <div id="bg"></div>
+    <div id="background"></div>
     <div id="snowholder">
-        <div class="snow1"></div>
-        <div class="snow2"></div>
-        <div class="snow3"></div>
+        <div class="snow snow1"></div>
+        <div class="snow snow2"></div>
+        <div class="snow snow3"></div>
     </div>
 
     <nav>
-        <button class="page-button">Home</button>
-        <button class="page-button">Profiles</button>
-        <button class="page-button">Creations</button>
-        <button class="page-button">Gaming</button>
+        <button class="nav__button">Home</button>
+        <button class="nav__button">Profiles</button>
+        <button class="nav__button">Creations</button>
+        <button class="nav__button">Gaming</button>
     </nav>
 
-    <div id="mainContainer">
+    <div id="pageContent">
     </div>
 </body>
 
@@ -89,13 +89,13 @@
 
     window.addEventListener("DOMContentLoaded", changeContent('homepage.html'), (currentPage = 0));
 
-    document.querySelectorAll(".page-button").forEach(function (button, index) {
+    document.querySelectorAll(".nav__button").forEach(function (button, index) {
         button.addEventListener("click", async function () {
             currentPageIndex = index;
             const contentURL = pageFiles[currentPageIndex];
-            await fadeOut(mainContainer);
+            await fadeOut(pageContent);
             await changeContent(contentURL);
-            fadeIn(mainContainer);
+            fadeIn(pageContent);
         });
     });
 
@@ -106,13 +106,12 @@
                     return res.text();
                 })
                 .then(cont => {
-                    var divPlaceholder = document.getElementById('mainContainer');
-                    document.getElementById('mainContainer').innerHTML = "";
+                    var divPlaceholder = document.getElementById('pageContent');
+                    document.getElementById('pageContent').innerHTML = "";
                     divPlaceholder.insertAdjacentHTML("afterbegin", cont);
                 })
                 .then(currentPage = currentPageIndex);
-        }
-        else {
+        } else {
             console.log('already here!');
         }
     };
@@ -120,7 +119,6 @@
     function fadeOut(element) {
         return new Promise((resolve) => {
             let opacity = 1;
-
             function fade() {
                 opacity -= 0.06;
                 if (opacity <= 0) {
@@ -131,7 +129,6 @@
                     requestAnimationFrame(fade);
                 }
             }
-
             fade();
         });
     }
@@ -139,7 +136,6 @@
     function fadeIn(element) {
         return new Promise((resolve) => {
             let opacity = null;
-
             function fade() {
                 opacity += 0.015;
                 if (opacity >= 1) {
@@ -150,7 +146,6 @@
                     requestAnimationFrame(fade);
                 }
             }
-
             fade();
         });
     }

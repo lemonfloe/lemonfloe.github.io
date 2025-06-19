@@ -1,0 +1,31 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    filter: drop-shadow(2px 5px 8px rgba(0, 0, 0, 0.6)) drop-shadow(-2px 5px 8px rgba(0, 0, 0, 0.6));
+    animation: breathe 7s cubic-bezier(.45, .05, .55, .95) infinite;
+}
+
+.linksWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linksButton {
+    height: 100%;
+    margin-right: 25px;
+    transform: translateY(0);
+    line-height: 0;
+}
+
+.linksButton:hover .linksIcon {
+    transform: translateY(-6px);
+    transition: 1s cubic-bezier(0, 2, 0.2, 1);
+}
+
+.linksIcon {
+    width: 60px;
+    filter: drop-shadow(4px 6px 0 #000);
+}

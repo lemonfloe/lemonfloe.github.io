@@ -1,0 +1,161 @@
+#background {
+    background-image: url("images/backgrounds/paper-winter-dark.png");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -2;
+
+    animation:
+        background--breathe 12s cubic-bezier(.45, .05, .55, .95) infinite,
+        background--rotate 18s cubic-bezier(.45, .05, .55, .95) infinite;
+}
+
+/* #region snowstuff */
+#snowholder {
+    mask-image: linear-gradient(to right, transparent, black, black, transparent);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}
+
+.snow {
+    width: 100%;
+    height: 1300px;
+    position: fixed;
+    top: 0;
+    animation-name: snowscroll;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.snow1 {
+    background-image: url("images/snow/snow1.png");
+    animation-duration: 18s;
+    opacity: 0.9;
+}
+
+.snow2 {
+    background-image: url("images/snow/snow2.png");
+    animation-duration: 28s;
+    opacity: 0.6;
+}
+
+.snow3 {
+    background-image: url("images/snow/snow3.png");
+    animation-duration: 42s;
+    opacity: 0.3;
+}
+
+/* #endregion */
+
+#pageContent {
+    margin: auto;
+    width: 930px;
+}
+
+.autoplayer {
+    cursor: pointer;
+    border-radius: 40px;
+    background: none;
+    position: fixed;
+    height: 35px;
+    bottom: 5px;
+    width: 35px;
+    left: 5px;
+    z-index: 1;
+}
+
+.autoplayer button {
+    background: linear-gradient(180deg, var(--bg-color-opacity1) 40%, var(--bg-color-opacity2));
+    box-shadow: 2px 2px var(--border-color1), -2px -2px var(--border-color2);
+    cursor: var(--cursor-pointer);
+    color: var(--light-text);
+    padding: 1px 4px 0px 4px;
+    border-radius: 40px;
+    font-weight: bold;
+    font-size: 18px;
+    position: fixed;
+    height: 35px;
+    bottom: 5px;
+    width: 35px;
+    left: 5px;
+    z-index: 2;
+}
+
+.autoplayer a {
+    background: linear-gradient(180deg, var(--container-color) 30%, black);
+    box-shadow: 2px 2px var(--border-color1), -2px -2px var(--border-color2);
+
+    border: solid var(--border-color) 2px;
+    border-radius: 8px;
+
+    color: white;
+    font-size: 12px;
+
+    position: fixed;
+    padding: 2px 10px;
+
+    bottom: 7px;
+
+    z-index: 1;
+    left: 50px;
+}
+
+nav {
+    width: 99%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+nav a,
+nav button {
+    background-color: var(--container-color);
+
+    border: solid var(--border-color) 2px;
+    border-radius: 20px;
+    padding: 12px;
+    margin: 0.3rem;
+
+    min-width: 60px;
+    box-shadow: black 0px 0px 15px;
+
+    text-align: center;
+
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+    text-shadow: inherit;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: DM-MediumItalic;
+    font-size: 1rem;
+    text-shadow: 1px 2px 2px black, -1px 2px 2px black;
+    /*cursor: url('images/cursor.png');*/
+}
+
+.container {
+    background-color: var(--container-color);
+
+    border: solid var(--border-color) 4px;
+    border-radius: 20px;
+
+    padding: 12px;
+    margin: 27px;
+
+    box-shadow: black 0px 0px 15px;
+}
+
+.container__text {
+    margin: auto;
+    width: 600px;
+}
