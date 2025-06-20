@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <div class="autoplayer">
         <div>
             <button id="autoplayer__button">⏯</button>
@@ -24,37 +23,6 @@
             Playing:<br>Countless
             grains arranged
             in a grid are waving randomly<br>MΣΣBΣΣ a.k.a KAZUHIRO ABO</a>
-
-        <script>
-            const audio = document.getElementById('autoplayer__audio');
-            audio.volume = 0;
-
-            let fadeInInterval;
-            const fadeInDuration = 1000;
-
-            function audioFadeIn() {
-                let volume = 0;
-                const increment = 0.01;
-                const steps = 1 / increment;
-                const intervalTime = fadeInDuration / steps;
-
-                fadeInInterval = setInterval(() => {
-                    volume += increment;
-                    if (volume > 1) {
-                        volume = 1;
-                        audio.volume = volume;
-                        clearInterval(fadeInInterval);
-                    } else {
-                        audio.volume = volume;
-                    }
-                }, intervalTime);
-            }
-
-            document.getElementById('autoplayer__button').addEventListener('click', () => {
-                audio.play();
-                audioFadeIn();
-            })
-        </script>
     </div>
 
     <div id="background"></div>
@@ -73,83 +41,8 @@
 
     <div id="pageContent">
     </div>
+    
+    <script type="module" src="main.js"></script>
 </body>
-
-<script>
-
-    const pageFiles = [
-        'homepage.html',
-        'profiles.html',
-        'creations.html',
-        'gaming.html'
-    ];
-
-    let currentPageIndex = null;
-    let currentPage = 0;
-
-    window.addEventListener("DOMContentLoaded", changeContent('homepage.html'), (currentPage = 0));
-
-    document.querySelectorAll(".nav__button").forEach(function (button, index) {
-        button.addEventListener("click", async function () {
-            currentPageIndex = index;
-            const contentURL = pageFiles[currentPageIndex];
-            await fadeOut(pageContent);
-            await changeContent(contentURL);
-            fadeIn(pageContent);
-        });
-    });
-
-    function changeContent(contentURL) {
-        if (currentPage != currentPageIndex) {
-            fetch(contentURL)
-                .then(res => {
-                    return res.text();
-                })
-                .then(cont => {
-                    var divPlaceholder = document.getElementById('pageContent');
-                    document.getElementById('pageContent').innerHTML = "";
-                    divPlaceholder.insertAdjacentHTML("afterbegin", cont);
-                })
-                .then(currentPage = currentPageIndex);
-        } else {
-            console.log('already here!');
-        }
-    };
-
-    function fadeOut(element) {
-        return new Promise((resolve) => {
-            let opacity = 1;
-            function fade() {
-                opacity -= 0.06;
-                if (opacity <= 0) {
-                    element.style.opacity = 0;
-                    resolve();
-                } else {
-                    element.style.opacity = opacity;
-                    requestAnimationFrame(fade);
-                }
-            }
-            fade();
-        });
-    }
-
-    function fadeIn(element) {
-        return new Promise((resolve) => {
-            let opacity = null;
-            function fade() {
-                opacity += 0.015;
-                if (opacity >= 1) {
-                    element.style.opacity = 1;
-                    resolve();
-                } else {
-                    element.style.opacity = opacity;
-                    requestAnimationFrame(fade);
-                }
-            }
-            fade();
-        });
-    }
-
-</script>
 
 </html>

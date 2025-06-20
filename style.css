@@ -7,10 +7,13 @@
 
 :root {
     --id_height: 4in;
-    --container-color: rgba(9, 17, 29, 0.8);
+    --container-color: rgba(9, 14, 29, 0.8);
     --border-color: rgba(196, 210, 255, 0.5);
-    /* scrollbar-width: thin; */
-    /* scrollbar-color: rgba(196, 210, 255, 0.5) !important; */
+}
+
+* {
+    /* background: #888; */
+    scrollbar-color: var(--border-color) var(--container-color);
 }
 
 /* @media only screen and (max-width: 960px) {

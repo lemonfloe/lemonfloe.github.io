@@ -2,8 +2,11 @@
     display: flex;
     justify-content: center;
     margin-top: 40px;
-    margin-bottom: 40px;
     filter: drop-shadow(2px 5px 8px rgba(0, 0, 0, 0.6)) drop-shadow(-2px 5px 8px rgba(0, 0, 0, 0.6));
+}
+
+.banner img {
+    width: 650px;
     animation: breathe 7s cubic-bezier(.45, .05, .55, .95) infinite;
 }
 
