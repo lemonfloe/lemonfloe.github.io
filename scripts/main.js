@@ -40,7 +40,7 @@ const pageFiles = [
 let currentPageIndex = null;
 let currentPage = 0;
 
-window.addEventListener("DOMContentLoaded", changeContent('homepage.html'), (currentPage = 0));
+window.addEventListener("DOMContentLoaded", changeContent('homepage.html'), (currentPage = 0), (currentPageIndex = 0));
 
 document.querySelectorAll(".nav__button").forEach(function (button, index) {
     button.addEventListener("click", async function () {
@@ -109,6 +109,7 @@ function fadeIn(element) {
 
 // #region Creations Audio
 import AudioMotionAnalyzer from "https://cdn.skypack.dev/audiomotion-analyzer?min";
+import { audioFiles } from './audioFiles.js';
 
 function setupAudioMotionAnalyzer() {
     const wavContainer = document.getElementById("wavcontainer");
@@ -173,16 +174,6 @@ function setupAudioMotionAnalyzer() {
 function setupCreationsAudio() {
     const audioElement = document.getElementById("audiosource");
     if (!audioElement) return;
-
-    const audioFiles = [
-        "https://dl.dropbox.com/scl/fi/3kni8e09vbao66f1bn7ct/floe-rainbowpotion-demo.mp3?rlkey=2ui12h9hos3e7ema81n9nqf6k",
-        "https://dl.dropbox.com/scl/fi/5w5846eaar79yc9q4yv3s/floe-thrash-demo.mp3?rlkey=g13zn9599x04md50oocl3axx7",
-        "https://dl.dropbox.com/scl/fi/1t1avibsj3p5u2j41o401/floe-crimson-demo.mp3?rlkey=ryl3yojadddbk26dii74e5729",
-        "https://dl.dropbox.com/scl/fi/hp80vg637j9rwdesll6vx/floe-splitcircuit-demo.mp3?rlkey=geikgnz3b1hg5j7u6bn8uldz6",
-        "https://dl.dropbox.com/scl/fi/tzpv7xu268rhql1ao8gne/floe-senseless.mp3?rlkey=2ufonpvudfvocxrzdvtym7xgz&st=47czh5yw",
-        "https://dl.dropbox.com/scl/fi/vni60xa1gdjmq6kjgl6zy/floe-chameleon-demo.mp3?rlkey=q7vhwaoiuby77es5fdjcfs79s&st=csb8ad2r",
-        "https://dl.dropbox.com/scl/fi/tf0a3w2ub0w6gqqglj7kz/MY-BLOOD-IS-LITERALLY-SUGAR.mp3?rlkey=1eq910phzvax4nhdx6efhsst6"
-    ];
 
     let currentAudioIndex = 0;
 

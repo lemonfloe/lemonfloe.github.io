@@ -1,4 +1,4 @@
-const galleryLinks = [
+export const galleryLinks = [
   "/assets/gallery/blood.jpg",
   "/assets/gallery/candy.jpg",
   "/assets/gallery/eugene.jpg",

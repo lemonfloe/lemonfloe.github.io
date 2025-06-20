@@ -1,5 +1,9 @@
+assets/gallery/generateGalleryList.bat.lnk
+assets/tracks/generateTrackList.bat.lnk
 scripts/generateGalleryList.bat
 scripts/generateGalleryList.js
+scripts/generateTrackList.bat
+scripts/generateTrackList.js
 .phcode.json
 .gitignore
 *.log
