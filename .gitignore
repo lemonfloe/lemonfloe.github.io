@@ -1,4 +1,5 @@
-generateImageList.js
+scripts/generateGalleryList.bat
+scripts/generateGalleryList.js
 .phcode.json
 .gitignore
 *.log
