@@ -4,5 +4,5 @@ scripts/generateGalleryList.bat
 scripts/generateGalleryList.js
 scripts/generateTrackList.bat
 scripts/generateTrackList.js
-.gitpush.bat
+gitpush.bat
 *.log

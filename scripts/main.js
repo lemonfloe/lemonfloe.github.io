@@ -67,6 +67,7 @@ function changeContent(contentURL) {
             setupAudioMotionAnalyzer();
             if (contentURL === 'creations.html') {
                 setupCreationsAudio();
+                generateGallery();
             }
             currentPage = currentPageIndex;
         })
@@ -107,7 +108,7 @@ function fadeIn(element) {
 }
 // #endregion
 
-// #region Creations Audio
+// #region Creations Tracklist
 import AudioMotionAnalyzer from "https://cdn.skypack.dev/audiomotion-analyzer?min";
 import { audioFiles } from './audioFiles.js';
 
@@ -196,7 +197,43 @@ function setupCreationsAudio() {
     });
 
 }
+// #endregion
 
+// #region Creations Gallery
+import { galleryLinks } from './galleryLinks.js';
+
+function generateGallery() {
+    const galleryContainer = document.getElementById('galleryContainer');
+    if (!galleryContainer) return;
+
+    galleryContainer.innerHTML = "";
+
+    galleryLinks.forEach(link => {
+        const fileName = link.split('/').pop().split('.')[0];
+        const firstSpace = fileName.indexOf(' ');
+        let date = '';
+        let caption = '';
+
+        if (firstSpace !== -1) {
+            date = fileName.substring(0, firstSpace);
+            caption = fileName.substring(firstSpace + 1);
+        } else {
+            caption = fileName;
+        }
+
+        const thumb = `/assets/gallery/thumbnails/${fileName}_thumb.jpg`;
+
+        const div = document.createElement('div');
+        div.className = 'gallery';
+        div.innerHTML = `
+            <a href="${link}">
+                <img class="thumbnail" src="${thumb}" alt="${caption}" />
+            </a>
+            <div class="caption">${caption}</div>
+        `;
+        galleryContainer.appendChild(div);
+    });
+}
 // #endregion
 
 // #region wip autoplayer
