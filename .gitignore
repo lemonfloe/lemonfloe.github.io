@@ -4,6 +4,5 @@ scripts/generateGalleryList.bat
 scripts/generateGalleryList.js
 scripts/generateTrackList.bat
 scripts/generateTrackList.js
-.phcode.json
-.gitignore
+.gitpush.bat
 *.log

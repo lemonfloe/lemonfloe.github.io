@@ -20,16 +20,11 @@
 
 a:link {
     text-decoration: none;
-    color: #66b2ff;
+    color: var(--link-color);
 }
 
 a:visited {
-    color: #66b2ff;
-}
-
-i {
-    color: #000000b0;
-    font-style: normal;
+    color: var(--link-color);
 }
 
 h1 {

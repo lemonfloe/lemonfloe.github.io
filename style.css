@@ -9,6 +9,17 @@
     --id_height: 4in;
     --container-color: rgba(9, 14, 29, 0.8);
     --border-color: rgba(196, 210, 255, 0.5);
+    --link-color: #66b2ff;
+    --text-color: white;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --container-color: rgba(204, 214, 248, 0.85);
+        --border-color: rgba(12, 64, 94, 0.8);
+        --link-color: #0165e9;
+        --text-color: black;
+    }
 }
 
 * {
