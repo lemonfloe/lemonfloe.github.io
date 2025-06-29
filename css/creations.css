@@ -7,7 +7,10 @@
 }
 
 .gallery {
-    margin-bottom: 0;
+    width: 160px;
+    height: 160px;
+
+    margin: 2px;
 }
 
 .gallery .caption {
@@ -21,15 +24,9 @@
     text-align: center;
 }
 
-.caption {
-    padding: 5px 0 5px 0;
-}
-
 .thumbnail {
-    max-width: 170px;
-    box-shadow: 0px 1px 6px black;
-    border-radius: 7px;
-    margin: auto 6px 0 6px;
+    width: 100%;
+    border-radius: 2px;
 }
 
 .flex {

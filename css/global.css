@@ -1,5 +1,5 @@
 #background {
-    background-image: url("/assets/backgrounds/paper-winter-dark.png");
+    background-image: url("/assets/backgrounds/darkwinter.png");
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -42,19 +42,19 @@
 }
 
 .snow1 {
-    background-image: url("/assets/snow/snow1.png");
+    background-image: url("/assets/backgrounds/snow1.png");
     animation-duration: 18s;
     opacity: 0.9;
 }
 
 .snow2 {
-    background-image: url("/assets/snow/snow2.png");
+    background-image: url("/assets/backgrounds/snow2.png");
     animation-duration: 28s;
     opacity: 0.6;
 }
 
 .snow3 {
-    background-image: url("/assets/snow/snow3.png");
+    background-image: url("/assets/backgrounds/snow3.png");
     animation-duration: 42s;
     opacity: 0.3;
 }
@@ -69,12 +69,8 @@
 
 .autoplayer {
     cursor: pointer;
-    border-radius: 40px;
-    background: none;
     position: fixed;
-    height: 35px;
     bottom: 5px;
-    width: 35px;
     left: 5px;
     z-index: 1;
 }
@@ -88,11 +84,12 @@
     border-radius: 40px;
     font-weight: bold;
     font-size: 18px;
+    
     position: fixed;
-    height: 35px;
-    bottom: 5px;
     width: 35px;
-    left: 5px;
+    height: 35px;
+    bottom: 12px;
+    left: 9px;
     z-index: 2;
 }
 
@@ -109,10 +106,18 @@
     position: fixed;
     padding: 2px 10px;
 
-    bottom: 7px;
+    bottom: 9px;
+    left: 55px;   
 
     z-index: 1;
+
+}
+
+.autoplayer input {
+    position: fixed;
+    bottom: 54px;
     left: 50px;
+    width: 100px;
 }
 
 nav {

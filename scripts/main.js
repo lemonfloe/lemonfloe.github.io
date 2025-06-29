@@ -1,31 +1,17 @@
 // #region autoplayer
 const audio = document.getElementById('autoplayer__audio');
-audio.volume = 0;
+audio.volume = 0.5;
 
-let fadeInInterval;
-const fadeInDuration = 1000;
-
-function audioFadeIn() {
-    let volume = 0;
-    const increment = 0.01;
-    const steps = 1 / increment;
-    const intervalTime = fadeInDuration / steps;
-
-    fadeInInterval = setInterval(() => {
-        volume += increment;
-        if (volume > 1) {
-            volume = 1;
-            audio.volume = volume;
-            clearInterval(fadeInInterval);
-        } else {
-            audio.volume = volume;
-        }
-    }, intervalTime);
+const volumeSlider = document.getElementById('autoplayer__volume');
+if (volumeSlider) {
+    volumeSlider.value = audio.volume;
+    volumeSlider.addEventListener('input', () => {
+        audio.volume = volumeSlider.value;
+    });
 }
 
 document.getElementById('autoplayer__button').addEventListener('click', () => {
-    audio.play();
-    audioFadeIn();
+    audio.paused ? audio.play() : audio.pause();
 })
 // #endregion
 
@@ -229,7 +215,6 @@ function generateGallery() {
             <a href="${link}">
                 <img class="thumbnail" src="${thumb}" alt="${caption}" />
             </a>
-            <div class="caption">${caption}</div>
         `;
         galleryContainer.appendChild(div);
     });

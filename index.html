@@ -4,25 +4,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="style.css?v=25062104" rel="stylesheet" type="text/css" media="all" />
+    <link href="style.css?v=2025-06-29" rel="stylesheet" type="text/css" media="all" />
     <title>Cryosolis</title>
-    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
 </head>
 
 <body>
     <div class="autoplayer">
         <div>
-            <button id="autoplayer__button">⏯</button>
+            <button id="autoplayer__button">
+                <img width="35px" height="35px" src="assets/music/pause-and-play.png" />
+            </button>
         </div>
+
+        <input id="autoplayer__volume" type="range" min="0" max="1" step="0.01" value="0.5" title="Volume" />
+
+        <a id="nowPlaying" target="_blank" href="https://www.youtube.com/watch?v=szdWkrRHpAw">Countless
+            grains arranged
+            in a grid are waving randomly<br>MΣΣBΣΣ a.k.a KAZUHIRO ABO</a>
 
         <audio loop id="autoplayer__audio">
             <source src="https://lemonfloe.github.io/music/background_audio.ogg" type="audio/ogg">
         </audio>
 
-        <a id="nowPlaying" target="_blank" href="https://www.youtube.com/watch?v=szdWkrRHpAw">Now
-            Playing:<br>Countless
-            grains arranged
-            in a grid are waving randomly<br>MΣΣBΣΣ a.k.a KAZUHIRO ABO</a>
     </div>
 
     <div id="background"></div>
@@ -41,7 +45,7 @@
 
     <div id="pageContent"></div>
     
-    <script type="module" src="scripts/main.js?v=25062104"></script>
+    <script type="module" src="scripts/main.js?v=2025-06-29"></script>
 </body>
 
 </html>
