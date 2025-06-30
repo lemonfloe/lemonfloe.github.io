@@ -6,7 +6,7 @@
     aspect-ratio: 3.375 / 2.125;
     height: var(--id_height);
 
-    font-family: chatfont;
+    font-family: DM-MediumItalic;
     font-weight: bold;
     color: black;
     text-shadow: none;
@@ -64,7 +64,6 @@
 }
 
 .profileLexieSpeech {
-    font-family: "chatfont";
     font-size: 20px;
     color: #dbc0ff;
     text-shadow:
@@ -76,7 +75,6 @@
 }
 
 .profileHazelSpeech {
-    font-family: "chatfont";
     font-size: 20px;
     color: #ffd8c0;
     text-shadow:

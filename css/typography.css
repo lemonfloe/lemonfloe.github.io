@@ -1,5 +1,5 @@
 @font-face {
-    font-family: chatfont;
+    font-family: mont;
     src: url("/fonts/Montserrat-Regular.ttf");
 }
 
@@ -28,13 +28,8 @@ a:visited {
 }
 
 h1 {
-    font-family: dm-bold;
     text-align: center;
     text-shadow: 1px 3px black, -1px 3px black;
-}
-
-ul {
-    font-family: sm-book;
 }
 
 button {
