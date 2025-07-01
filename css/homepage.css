@@ -6,7 +6,8 @@
 }
 
 .logo img {
-    width: 650px;
+    width: 85%;
+    max-width: 650px;
     animation: breathe 7s cubic-bezier(.45, .05, .55, .95) infinite;
 }
 
@@ -18,17 +19,17 @@
 
 .linksButton {
     height: 100%;
-    margin-right: 25px;
-    transform: translateY(0);
+    margin: 0 12px 0 12px;
     line-height: 0;
 }
 
 .linksButton:hover .linksIcon {
-    transform: translateY(-6px);
+    transform: translateY(-7px);
     transition: 1s cubic-bezier(0, 2, 0.2, 1);
 }
 
 .linksIcon {
     width: 60px;
-    filter: drop-shadow(4px 6px 0 #000);
+    /* filter: drop-shadow(4px 6px 0 #000); */
 }
+
