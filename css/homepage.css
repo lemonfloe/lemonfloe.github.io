@@ -19,17 +19,17 @@
 
 .linksButton {
     height: 100%;
-    margin: 0 12px 0 12px;
+    margin: 0 8px 0 8px;
     line-height: 0;
 }
 
 .linksButton:hover .linksIcon {
-    transform: translateY(-7px);
-    transition: 1s cubic-bezier(0, 2, 0.2, 1);
+    transform: translateY(-9px);
+    transition: 0.15s cubic-bezier(0, 1.4, 0.5, 1.4);
 }
 
 .linksIcon {
-    width: 60px;
-    /* filter: drop-shadow(4px 6px 0 #000); */
+    width: 80px;
+    filter: drop-shadow(0 0 8px #000);
 }
 

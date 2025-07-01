@@ -64,7 +64,7 @@
 #pageContent {
     margin: auto;
     margin-bottom: 100px;
-    max-width: 930px;
+    max-width: 880px;
 }
 
 .autoplayer {
@@ -121,7 +121,9 @@
 }
 
 nav {
-    padding: 10px;
+    top: 10px;
+    /* position: sticky; */
+    z-index: 100;
     display: flex;
     justify-content: center;
 }
@@ -158,19 +160,19 @@ body {
 
 .container {
     background-color: var(--container-color);
-
-    border: solid var(--border-color) 4px;
-    border-radius: 20px;
-
+    
     padding: 12px;
-    margin: 27px;
+    border: solid var(--border-color) 3px;
+    border-radius: 14px;
+    margin: 25px 0 25px 0;
 
-    box-shadow: black 0px 0px 15px;
+    box-shadow: rgba(0, 0, 0, 0.7) 0 0 8px;
 }
 
 .container__text {
     margin: auto;
-    width: 75%;
+    width: 650px;
+    max-width: 95%;
 }
 
 @media (prefers-color-scheme: light) {
