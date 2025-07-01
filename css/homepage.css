@@ -18,8 +18,10 @@
 }
 
 .linksButton {
+    max-width: 80px;
+    width: 25%;
     height: 100%;
-    margin: 0 8px 0 8px;
+    margin: 0 .4em 0 .4em;
     line-height: 0;
 }
 
@@ -29,7 +31,8 @@
 }
 
 .linksIcon {
-    width: 80px;
+    width: 100%;
+    height: auto;
     filter: drop-shadow(0 0 8px #000);
 }
 
