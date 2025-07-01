@@ -8,6 +8,7 @@
 :root {
     --id_height: 4in;
     --container-color: rgba(9, 14, 29, 0.8);
+    --container-color-b: rgba(9, 14, 29, 1);
     --border-color: rgba(196, 210, 255, 0.5);
     --link-color: #66b2ff;
     --text-color: white;

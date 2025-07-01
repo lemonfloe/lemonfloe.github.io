@@ -6,7 +6,7 @@
 }
 
 .logo img {
-    width: 85%;
+    width: 93%;
     max-width: 650px;
     animation: breathe 7s cubic-bezier(.45, .05, .55, .95) infinite;
 }
