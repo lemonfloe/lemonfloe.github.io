@@ -17,10 +17,10 @@ document.getElementById('autoplayer__button').addEventListener('click', () => {
 
 // #region Nav Content Swap
 const pageFiles = [
-    'homepage.html',
-    'profiles.html',
-    'creations.html',
-    'gaming.html'
+    'pages/homepage.html',
+    'pages/profiles.html',
+    'pages/creations.html',
+    'pages/gaming.html'
 ];
 
 const pagePaths = [
