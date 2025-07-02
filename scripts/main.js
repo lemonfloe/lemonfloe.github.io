@@ -38,6 +38,17 @@ function getPageIndexFromPath(path) {
     return pagePaths.indexOf(path);
 }
 
+function getPathFromQuery() {
+    const query = window.location.search;
+    if (query.startsWith('?/')) {
+        return '/' + query.slice(2);
+    }
+    if (query.startsWith('?')) {
+        return '/' + query.slice(1);
+    }
+    return window.location.pathname
+}
+
 async function handleNav(index) {
     currentPageIndex = index;
     currentPage = index;
@@ -48,7 +59,7 @@ async function handleNav(index) {
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
-    let idx = getPageIndexFromPath(window.location.pathname);
+    let idx = getPageIndexFromPath(getPathFromQuery());
     if (idx === -1) idx = 0;
     currentPage = idx;
     currentPageIndex = idx;
@@ -56,7 +67,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 });
 
 window.addEventListener("popstate", async () => {
-    let idx = getPageIndexFromPath(window.location.pathname);
+    let idx = getPageIndexFromPath(getPathFromQuery());
     if (idx === -1) idx = 0;
     currentPage = idx;
     currentPageIndex = idx;
