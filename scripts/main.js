@@ -23,24 +23,48 @@ const pageFiles = [
     'gaming.html'
 ];
 
+const pagePaths = [
+    '/',
+    '/profiles',
+    '/creations',
+    '/gaming'
+];
+
 let currentPageIndex = null;
 let currentPage = 0;
 
-window.addEventListener("DOMContentLoaded", changeContent('homepage.html'), (currentPage = 0), (currentPageIndex = 0));
+function getPageIndexFromPath(path) {
+    if (path.length > 1 && path.endsWith('/')) path = path.slice(0, -1);
+    return pagePaths.indexOf(path);
+}
 
-document.querySelectorAll(".nav__button").forEach(function (button, index) {
-    button.addEventListener("click", async function () {
+async function handleNav(index) {
+    currentPageIndex = index;
+    currentPage = index;
+    history.pushState(null, "", pagePaths[index]);
+    await fadeOut(pageContent);
+    await changeContent(pageFiles[index]);
+    await fadeIn(pageContent);
+}
 
-        if (currentPage != index) {
-            currentPageIndex = index;
-            const contentURL = pageFiles[currentPageIndex];
-            await fadeOut(pageContent);
-            await changeContent(contentURL);
-            await fadeIn(pageContent);
-        } else {
-            console.log('already here!');
-        }
-    });
+window.addEventListener("DOMContentLoaded", async () => {
+    let idx = getPageIndexFromPath(window.location.pathname);
+    if (idx === -1) idx = 0;
+    currentPage = idx;
+    currentPageIndex = idx;
+    await changeContent(pageFiles[idx]);
+});
+
+window.addEventListener("popstate", async () => {
+    let idx = getPageIndexFromPath(window.location.pathname);
+    if (idx === -1) idx = 0;
+    currentPage = idx;
+    currentPageIndex = idx;
+    await changeContent(pageFiles[idx]);
+});
+
+document.querySelectorAll(".nav__button").forEach((button, index) => {
+    button.addEventListener("click", () => handleNav(index));
 });
 
 function changeContent(contentURL) {
