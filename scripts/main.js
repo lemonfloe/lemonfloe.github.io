@@ -32,6 +32,7 @@ const pagePaths = [
 
 let currentPageIndex = null;
 let currentPage = 0;
+const pageContent = document.getElementById('pageContent');
 
 function getPageIndexFromPath(path) {
     if (path.length > 1 && path.endsWith('/')) path = path.slice(0, -1);
@@ -86,7 +87,7 @@ function changeContent(contentURL) {
             divPlaceholder.innerHTML = "";
             divPlaceholder.insertAdjacentHTML("afterbegin", cont);
             setupAudioMotionAnalyzer();
-            if (contentURL === 'creations.html') {
+            if (contentURL === 'pages/creations.html') {
                 setupCreationsAudio();
                 generateGallery();
             }

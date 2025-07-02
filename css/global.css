@@ -15,7 +15,7 @@
         background--rotate 45s cubic-bezier(.45, .05, .55, .95) infinite;
 }
 
-.background__dim {
+#background__dim {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent 20% 85%, rgba(0, 0, 0, 0.4));
     width: 100vw;
     height: 100vh;

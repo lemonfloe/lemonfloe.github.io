@@ -5,4 +5,5 @@ scripts/generateGalleryList.js
 scripts/generateTrackList.bat
 scripts/generateTrackList.js
 gitpush.bat
+start-local-server.bat
 *.log
