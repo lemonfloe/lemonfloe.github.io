@@ -1,11 +1,8 @@
-@font-face {
-    font-family: mont;
-    src: url("/fonts/Montserrat-Regular.ttf");
-}
+@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap');
 
 @font-face {
-    font-family: dm-bold;
-    src: url("/fonts/DraftingMono-Bold.ttf");
+    font-family: mono;
+    src: url("/fonts/DraftingMono-Regular.ttf");
 }
 
 @font-face {
@@ -13,9 +10,10 @@
     src: url("/fonts/SimplyMono-Book.ttf");
 }
 
-@font-face {
-    font-family: dm-mediumItalic;
-    src: url("/fonts/DraftingMono-MediumItalic.ttf");
+.splash-regular {
+  font-family: "Splash", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 a:link {
@@ -55,10 +53,4 @@ button {
     width: 100%;
     margin: 6px 0;
     text-align: center;
-}
-
-.evenTable th,
-.evenTable td {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 4px;
 }

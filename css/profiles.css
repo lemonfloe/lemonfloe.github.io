@@ -1,55 +1,161 @@
-.ID_card {
-    background-image: url(/assets/idcard/light-grove.png);
+.idcard {
+    /* background-image: url(/assets/idcard/light-grove.png); */
+    background-color: #eff1fd;
     background-size: 100%;
     display: flex;
+    position: relative;
 
     aspect-ratio: 3.375 / 2.125;
     height: var(--id_height);
 
-    font-family: DM-MediumItalic;
-    font-weight: bold;
+    /* font-weight: bold; */
     color: black;
     text-shadow: none;
-    line-height: 14px;
+    line-height: 0.8em;
 
-    margin-left: 40px;
     border-radius: calc(var(--id_height)/17);
     border: 2px solid rgba(255, 255, 255, 0.3);
     overflow: hidden;
+
+    font-size: calc(var(--id_height) * 0.0425);
+    margin: auto;
 }
 
-.ID_zone1 {
-    background-color: rgba(1, 16, 94, 0.7);
+.idcard__tree {
+    opacity: 50%;
+    mix-blend-mode: darken;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    /* z-index: 2; */
+}
+
+.idcard__left {
+    width: 40%;
+    z-index: 1;
+}
+
+.idcard__right {
+    width: 60%;
+    margin: auto 4% auto 4%;
+    z-index: 1;
+}
+
+
+.idcard__location {
     mix-blend-mode: multiply;
 
-    border-radius: 0 0 20px;
-    padding: 20px;
+    border-radius: 0 0 1em;
+    padding: 0em 0 0 0.5em;
 
-    font-family: dm-mediumItalic;
-    font-size: 35px;
-    line-height: 0;
+    font-family: "Jim Nightshade";
+    font-size: 3em;
+    line-height: 0.5em;
+    color: black;
+    font-weight: 600;
+}
+
+.zone2__cardtype,
+.zone2__4d {
+    color: rgb(43, 64, 168);
+}
+
+.zone2__cardtype {
     color: white;
-
-
+    background-color: rgb(43, 64, 168);
+    margin: 0;
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: 200;
+    border-radius: 0.15em;
 }
 
-.ID_zone2 {
-    padding: 20px;
-    width: 100%;
+.zone2 {
+    margin: auto;
 }
 
-.ID_zone3 {
-    padding: 20px;
-}
-
-.ID_image {
-    width: 12em;
+.zone2 p,
+.zone2 table {
+    font-family: "Montserrat";
+    font-weight: 600;
+    background-color: white;
+    padding: 3.5%;
+    border: solid grey 1px;
     border-radius: 0.5em;
-    box-shadow: #000 0 0 3px;
+    margin: 0;
 }
 
-.ID_zoneLeft {
-    display: auto;
+p.zone2__name {
+    font-size: 1.5em;
+    border-radius: 0.5em 0.5em 0 0;
+}
+
+p.zone2__gender {
+    font-size: 1.5em;
+    border-radius: 0 0 0.5em 0;
+    border-top: none;
+}
+
+p.zone2__gender i {
+    color: grey;
+    font-style: normal;
+    font-weight: 100;
+}
+
+
+p.zone2__dob,
+p.zone2__details {
+    border: none;
+    border-left: solid grey 1px;
+    border-radius: 0;
+    line-height: 1.1em;
+    background: linear-gradient(to right, hsla(0, 0%, 100%, 0.75) 50%, transparent);
+    background-repeat: no-repeat;
+    font-family: "JetBrains Mono";
+}
+
+p.zone2__dob {
+    padding-bottom: 0;
+    font-weight: 600;
+}
+
+p.zone2__details {
+    color: grey;
+    font-weight: 300;
+}
+
+.idcard table,
+.zone1 table {
+    table-layout: fixed;
+    width: 100%;
+    border-top-left-radius: 0;
+    padding: 0;
+    font-family: "JetBrains Mono";
+    padding-left: 0.5em;
+    color: grey;
+}
+
+.zone2 table.zone2__expiring {
+    /* border-color: rgb(43, 64, 168); */
+    margin-bottom: 1em;
+}
+
+
+
+
+
+.zone3 {
+    margin-left: auto;
+}
+
+.zone3__image {
+    width: 80%;
+    margin-left: 2em;
+    border-radius: 5%;
+    box-shadow: #000 0 0 3px;
+    display: block;
 }
 
 .profileField {
