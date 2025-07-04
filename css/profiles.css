@@ -6,7 +6,8 @@
     position: relative;
 
     aspect-ratio: 3.375 / 2.125;
-    height: var(--id_height);
+    height: 90vh;
+    max-height: var(--id_height);
 
     /* font-weight: bold; */
     color: black;
