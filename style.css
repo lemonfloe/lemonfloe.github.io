@@ -6,7 +6,7 @@
 @import url(css/creations.css); */
 
 :root {
-    --id_height: 23rem;
+    --id_height: 40vh;
     --container-color: rgba(9, 14, 29, 0.8);
     --container-color-b: rgba(9, 14, 29, 1);
     --border-color: rgba(196, 210, 255, 0.5);
