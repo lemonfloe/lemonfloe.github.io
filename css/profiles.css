@@ -19,6 +19,7 @@
 
     font-size: calc(var(--id_height) * 0.0425);
     margin: auto;
+    margin-top: 2em;
 }
 
 .idcard__tree {
@@ -66,9 +67,9 @@
     color: white;
     background-color: rgb(43, 64, 168);
     margin: 0;
-    padding: 0.5rem;
+    padding: 0.35em;
     text-align: center;
-    font-weight: 200;
+    font-weight: 600;
     border-radius: 0.15em;
 }
 
@@ -101,7 +102,7 @@ p.zone2__gender {
 p.zone2__gender i {
     color: grey;
     font-style: normal;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 
