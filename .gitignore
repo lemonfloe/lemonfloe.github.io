@@ -1,5 +1,13 @@
+.vscode/
+.wipassets/
+node_modules/
 scripts/generateGalleryList.js
 scripts/generateTrackList.js
+.prettierrc.json
+desktop.ini
+package-lock.json
+package.json
+
 *.bat
 *.log
 *.lnk

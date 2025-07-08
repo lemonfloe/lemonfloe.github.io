@@ -1,200 +1,206 @@
 /* #region backgrounds */
 #background {
-    background-image: url("/assets/backgrounds/darkwinter.png");
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: -2;
-
-    animation:
-        background--breathe 30s cubic-bezier(.45, .05, .55, .95) infinite,
-        background--rotate 45s cubic-bezier(.45, .05, .55, .95) infinite;
+	position: fixed;
+	z-index: -2;
+	animation:
+		background--breathe 30s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
+		background--rotate 45s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+	background-image: url("/assets/backgrounds/darkwinter.png");
+	background-position: center bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
 }
-
 #background__dim {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent 20% 85%, rgba(0, 0, 0, 0.4));
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    z-index: -2;
+	position: fixed;
+	top: 0;
+	z-index: -2;
+	background: linear-gradient(
+		to right,
+		rgb(0 0 0 / 40%),
+		transparent 20% 85%,
+		rgb(0 0 0 / 40%)
+	);
+	width: 100vw;
+	height: 100vh;
 }
 
 #snowholder {
-    mask-image: linear-gradient(to right, transparent, black, black, transparent);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    z-index: -1;
+	position: fixed;
+	top: 0;
+	z-index: -1;
+	mask-image: linear-gradient(
+		to right,
+		transparent,
+		black,
+		black,
+		transparent
+	);
+	width: 100vw;
+	height: 100vh;
 }
 
 .snow {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    margin: auto;
-    animation-name: snowscroll;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+	position: fixed;
+	top: 0;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-name: snowscroll;
+	margin: auto;
+	width: 100vw;
+	height: 100vh;
 }
 
 .snow1 {
-    background-image: url("/assets/backgrounds/snow1.png");
-    animation-duration: 18s;
-    opacity: 0.9;
+	opacity: 0.9;
+	animation-duration: 18s;
+	background-image: url("/assets/backgrounds/snow1.png");
 }
 
 .snow2 {
-    background-image: url("/assets/backgrounds/snow2.png");
-    animation-duration: 28s;
-    opacity: 0.6;
+	opacity: 0.6;
+	animation-duration: 28s;
+	background-image: url("/assets/backgrounds/snow2.png");
 }
 
 .snow3 {
-    background-image: url("/assets/backgrounds/snow3.png");
-    animation-duration: 42s;
-    opacity: 0.3;
+	opacity: 0.3;
+	animation-duration: 42s;
+	background-image: url("/assets/backgrounds/snow3.png");
 }
 /* #endregion */
 
 #pageContent {
-    margin: auto;
-    margin-bottom: 100px;
-    max-width: 880px;
+	margin: auto;
+	margin-bottom: 100px;
+	max-width: 880px;
 }
 
 .autoplayer {
-    cursor: pointer;
-    position: fixed;
-    bottom: 5px;
-    left: 5px;
-    z-index: 5;
+	position: fixed;
+	bottom: 5px;
+	left: 5px;
+	z-index: 5;
+	cursor: pointer;
 }
 
 .autoplayer button {
-    background: linear-gradient(180deg, var(--bg-color-opacity1) 40%, var(--bg-color-opacity2));
-    box-shadow: 2px 2px var(--border-color1), -2px -2px var(--border-color2);
-    cursor: var(--cursor-pointer);
-    color: var(--text-color);
-    padding: 1px 4px 0px 4px;
-    border-radius: 40px;
-    font-weight: bold;
-    font-size: 18px;
-    
-    position: fixed;
-    width: 35px;
-    height: 35px;
-    bottom: 12px;
-    left: 9px;
-    z-index: 2;
+	position: fixed;
+	bottom: 12px;
+	left: 9px;
+	z-index: 2;
+	cursor: var(--cursor-pointer);
+	box-shadow:
+		2px 2px var(--border-color1),
+		-2px -2px var(--border-color2);
+	border-radius: 40px;
+	background: linear-gradient(
+		180deg,
+		var(--bg-color-opacity1) 40%,
+		var(--bg-color-opacity2)
+	);
+	padding: 1px 4px 0;
+	width: 35px;
+	height: 35px;
+	color: var(--text-color);
+	font-weight: bold;
+	font-size: 18px;
 }
 
 .autoplayer a {
-    background: linear-gradient(180deg, var(--container-color) 30%, black);
-    box-shadow: 2px 2px var(--border-color1), -2px -2px var(--border-color2);
-
-    border: solid var(--border-color) 2px;
-    border-radius: 8px;
-
-    color: var(--text-color);
-    font-size: 12px;
-
-    position: fixed;
-    padding: 2px 10px;
-
-    bottom: 9px;
-    left: 55px;   
-
-    z-index: 1;
-
+	position: fixed;
+	bottom: 9px;
+	left: 55px;
+	z-index: 1;
+	box-shadow:
+		2px 2px var(--border-color1),
+		-2px -2px var(--border-color2);
+	border: solid var(--border-color) 2px;
+	border-radius: 8px;
+	background: linear-gradient(180deg, var(--container-color) 30%, black);
+	padding: 2px 10px;
+	color: var(--text-color);
+	font-size: 12px;
 }
 
 .autoplayer input {
-    position: fixed;
-    bottom: 54px;
-    left: 50px;
-    width: 100px;
+	position: fixed;
+	bottom: 54px;
+	left: 50px;
+	width: 100px;
 }
 
 nav {
-    top: 10px;
-    position: sticky;
-    z-index: 100;
-    display: flex;
-    justify-content: center;
+	display: flex;
+	top: 10px;
+	justify-content: center;
+	z-index: 100;
+	margin-top: 10px;
 }
 
 nav a,
 nav button {
-    background-color: var(--container-color);
-
-    border: solid var(--border-color) 2px;
-    border-radius: 20px;
-    padding: 12px;
-    margin: 0.3rem;
-
-    min-width: 60px;
-    box-shadow: rgba(0, 0, 0, 0.7) 0 0 8px;
-
-    text-align: center;
-
-    font-family: inherit;
-    color: inherit;
-    font-size: inherit;
-    text-shadow: inherit;
+	margin: 0.3rem;
+	box-shadow: rgb(0 0 0 / 70%) 0 0 8px;
+	border: solid var(--border-color) 2px;
+	border-radius: 20px;
+	background-color: var(--container-color);
+	padding: 12px;
+	min-width: 60px;
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	text-align: center;
+	text-shadow: inherit;
 }
 
 body {
-    background-color: black;
-    color: var(--text-color);
-    font-family: "Montserrat";
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.4;
-    text-shadow: 1px 2px 2px black, -1px 2px 2px black;
-    margin: 0;
-    /*cursor: url('/assets/cursor.png');*/
+	margin: 0;
+	background-color: black;
+	color: var(--text-color);
+	font-weight: 600;
+	font-size: 1rem;
+	line-height: 1.4;
+	font-family: Montserrat;
+	text-shadow:
+		1px 2px 2px black,
+		-1px 2px 2px black;
+
+	/* cursor: url('/assets/cursor.png'); */
 }
 
 .container {
-    background-color: var(--container-color);
-    
-    padding: 12px;
-    border: solid var(--border-color) 3px;
-    border-radius: 14px;
-    margin: 25px 2vw 25px 2vw;
-
-    box-shadow: rgba(0, 0, 0, 0.7) 0 0 8px;
+	margin: 25px 2vw;
+	box-shadow: rgb(0 0 0 / 70%) 0 0 8px;
+	border: solid var(--border-color) 3px;
+	border-radius: 14px;
+	background-color: var(--container-color);
+	padding: 12px;
 }
 
 .container__text {
-    margin: auto;
-    width: 650px;
-    max-width: 100%;
+	margin: auto;
+	width: 650px;
+	max-width: 100%;
 }
 
 @media (prefers-color-scheme: light) {
-    body {
-    background-color: white;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-    }
+	body {
+		background-color: white;
+		text-shadow: 1px 1px 1px rgb(0 0 0 / 15%);
+	}
 }
 
-@media (max-width: 768px) {
-    body {
-        font-size: 0.875rem;
-    }
+@media (width <=768px) {
+	body {
+		font-size: 0.875rem;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #background {
-    animation: none;
-    transition: none;
-  }
+	#background {
+		animation: none;
+		transition: none;
+	}
 }

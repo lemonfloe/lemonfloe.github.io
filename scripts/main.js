@@ -227,7 +227,6 @@ import { galleryLinks } from './galleryLinks.js';
 function generateGallery() {
     const galleryContainer = document.getElementById('galleryContainer');
     if (!galleryContainer) return;
-
     galleryContainer.innerHTML = "";
 
     galleryLinks.forEach(link => {
@@ -246,14 +245,45 @@ function generateGallery() {
         const thumb = `/assets/gallery/thumbnails/${fileName}_thumb.jpg`;
 
         const div = document.createElement('div');
-        div.className = 'gallery';
+        div.className = 'galleryFrame';
         div.innerHTML = `
-            <a href="${link}">
+            <button class="image-button" data-full="${link}">
                 <img class="thumbnail" src="${thumb}" alt="${caption}" />
-            </a>
+            </button>
         `;
         galleryContainer.appendChild(div);
     });
+	
+	const overlay = document.getElementById('overlay');
+ 	const overlayImg = document.getElementById('overlay-img');
+
+  	galleryContainer.addEventListener('click', (e) => {
+    	const button = e.target.closest('.image-button');
+    	if (!button) return;
+
+    	const fullSrc = button.getAttribute('data-full');
+    	if (!fullSrc) return;
+
+    	overlayImg.src = fullSrc;
+    	overlay.classList.add('active');
+		document.body.style.overflow = 'hidden';
+  	});
+
+  	overlay.addEventListener('click', () => {
+    	overlay.classList.remove('active');
+		overlayImg.src = '';
+		document.body.style.overflow = '';
+  	});
+
+  	document.addEventListener('keydown', (e) => {
+    	if (e.key === 'Escape') {
+      	overlay.classList.remove('active');
+		setTimeout(() => {
+			overlayImg.src = '';
+		}, 300);
+		document.body.style.overflow = '';
+    }
+  	});
 }
 // #endregion
 

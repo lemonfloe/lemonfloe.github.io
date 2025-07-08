@@ -2,56 +2,59 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="style.css?v=07032259" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/animation.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/creations.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/global.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/homepage.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/profiles.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/typography.css" rel="stylesheet" type="text/css" media="all" />
-    <title>Cryosolis</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="style.css?v=07071747" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/animation.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/creations.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/global.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/homepage.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/profiles.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/typography.css" rel="stylesheet" type="text/css" media="all" />
+	<title>Cryosolis</title>
+	<link rel="icon" type="image/x-icon" href="assets/favicon.png" />
 </head>
 
 <body>
-    <div class="autoplayer">
-        <div>
-            <button id="autoplayer__button">
-                <img width="35px" height="35px" src="assets/music/pause-and-play.png" />
-            </button>
-        </div>
+	<div id="overlay">
+		<img id="overlay-img" src="" alt="Full-size image" />
+	</div>
 
-        <input id="autoplayer__volume" type="range" min="0" max="1" step="0.01" value="0.5" title="Volume" />
+	<div class="autoplayer">
+		<div>
+			<button id="autoplayer__button">
+				<img width="35px" height="35px" src="assets/music/pause-and-play.png" />
+			</button>
+		</div>
 
-        <a id="nowPlaying" target="_blank" href="https://www.youtube.com/watch?v=NLtMqHLoxeU">
-            i have no photographs of my most cherished moments<br><i>deuteronomy</i></a>
+		<input id="autoplayer__volume" type="range" min="0" max="1" step="0.01" value="0.5" title="Volume" />
 
-        <audio loop id="autoplayer__audio">
-            <source src="assets/music/winteragain_photographs.ogg" type="audio/ogg">
-        </audio>
+		<a id="nowPlaying" target="_blank" href="https://www.youtube.com/watch?v=NLtMqHLoxeU">
+			i have no photographs of my most cherished moments<br><i>deuteronomy</i></a>
 
-    </div>
+		<audio loop id="autoplayer__audio">
+			<source src="assets/music/winteragain_photographs.ogg" type="audio/ogg">
+		</audio>
+	</div>
 
-    <div id="background"></div>
-    <div id="background__dim"></div>
-    <div id="snowholder">
-        <div class="snow snow1"></div>
-        <div class="snow snow2"></div>
-        <div class="snow snow3"></div>
-    </div>
+	<div id="background"></div>
+	<div id="background__dim"></div>
+	<div id="snowholder">
+		<div class="snow snow1"></div>
+		<div class="snow snow2"></div>
+		<div class="snow snow3"></div>
+	</div>
 
-    <nav>
-        <button class="nav__button">Home</button>
-        <button class="nav__button">Profiles</button>
-        <button class="nav__button">Creations</button>
-        <button class="nav__button">Gaming</button>
-    </nav>
+	<nav>
+		<button class="nav__button">Home</button>
+		<button class="nav__button">Profiles</button>
+		<button class="nav__button">Creations</button>
+		<button class="nav__button">Gaming</button>
+	</nav>
 
-    <div id="pageContent"></div>
-    
-    <script type="module" src="scripts/main.js?v=07032259"></script>
+	<div id="pageContent"></div>
+
+	<script type="module" src="scripts/main.js?v=07071747"></script>
 </body>
 
 </html>

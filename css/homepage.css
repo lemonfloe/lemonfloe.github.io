@@ -1,38 +1,38 @@
 .logo {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    filter: drop-shadow(2px 5px 8px rgba(0, 0, 0, 0.6)) drop-shadow(-2px 5px 8px rgba(0, 0, 0, 0.6));
+	display: flex;
+	justify-content: center;
+	filter: drop-shadow(2px 5px 8px rgb(0 0 0 / 60%))
+		drop-shadow(-2px 5px 8px rgb(0 0 0 / 60%));
+	margin-top: 40px;
 }
 
 .logo img {
-    width: 93%;
-    max-width: 650px;
-    animation: breathe 7s cubic-bezier(.45, .05, .55, .95) infinite;
+	animation: breathe 7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+	width: 93%;
+	max-width: 650px;
 }
 
-.linksWrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.links-wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.linksButton {
-    max-width: 80px;
-    width: 25%;
-    height: 100%;
-    margin: 0 .4em 0 .4em;
-    line-height: 0;
+.links-button {
+	margin: 0 0.4em;
+	width: 25%;
+	max-width: 80px;
+	height: 100%;
+	line-height: 0;
 }
 
-.linksButton:hover .linksIcon {
-    transform: translateY(-9px);
-    transition: 0.15s cubic-bezier(0, 1.4, 0.5, 1.4);
+.links-icon {
+	filter: drop-shadow(0 0 8px #000);
+	width: 100%;
+	height: auto;
 }
 
-.linksIcon {
-    width: 100%;
-    height: auto;
-    filter: drop-shadow(0 0 8px #000);
+.links-button:hover .links-icon {
+	transform: translateY(-9px);
+	transition: 0.15s cubic-bezier(0, 1.4, 0.5, 1.4);
 }
-

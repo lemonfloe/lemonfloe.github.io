@@ -1,209 +1,201 @@
 .idcard {
-    /* background-image: url(/assets/idcard/light-grove.png); */
-    background-color: #eff1fd;
-    background-size: 100%;
-    display: flex;
-    position: relative;
+	display: flex;
+	position: relative;
+	margin: auto;
+	margin-top: 2em;
+	border: 2px solid rgb(255 255 255 / 30%);
+	border-radius: calc(var(--id_height) / 17);
 
-    aspect-ratio: 3.375 / 2.125;
-    height: 90vh;
-    max-height: var(--id_height);
+	background-size: 100%;
+	/* background-image: url(/assets/idcard/light-grove.png); */
+	background-color: #eff1fd;
+	aspect-ratio: 3.375 / 2.125;
+	height: 90vh;
+	max-height: var(--id_height);
+	overflow: hidden;
 
-    /* font-weight: bold; */
-    color: black;
-    text-shadow: none;
-    line-height: 0.8em;
-
-    border-radius: calc(var(--id_height)/17);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    overflow: hidden;
-
-    font-size: calc(var(--id_height) * 0.0425);
-    margin: auto;
-    margin-top: 2em;
+	/* font-weight: bold; */
+	color: black;
+	font-size: calc(var(--id_height) * 0.0425);
+	line-height: 0.8em;
+	text-shadow: none;
 }
 
 .idcard__tree {
-    opacity: 50%;
-    mix-blend-mode: darken;
-    object-fit: cover;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-    /* z-index: 2; */
+	position: absolute;
+	bottom: 0;
+	opacity: 0.5;
+	/* z-index: 2; */
+	mix-blend-mode: darken;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
 }
 
 .idcard__left {
-    width: 40%;
-    z-index: 1;
+	z-index: 1;
+	width: 40%;
 }
 
 .idcard__right {
-    width: 60%;
-    margin: auto 4% auto 4%;
-    z-index: 1;
+	z-index: 1;
+	margin: auto 4%;
+	width: 60%;
 }
 
-
 .idcard__location {
-    mix-blend-mode: multiply;
-
-    border-radius: 0 0 1em;
-    padding: 0em 0 0 0.5em;
-
-    font-family: "Jim Nightshade";
-    font-size: 3em;
-    line-height: 0.5em;
-    color: black;
-    font-weight: 600;
+	mix-blend-mode: multiply;
+	border-radius: 0 0 1em;
+	padding: 0 0 0 0.5em;
+	color: black;
+	font-weight: 600;
+	font-size: 3em;
+	line-height: 0.5em;
+	font-family: "Jim Nightshade";
 }
 
 .zone2__cardtype,
 .zone2__4d {
-    color: rgb(43, 64, 168);
+	color: rgb(43 64 168);
 }
 
 .zone2__cardtype {
-    color: white;
-    background-color: rgb(43, 64, 168);
-    margin: 0;
-    padding: 0.35em;
-    text-align: center;
-    font-weight: 600;
-    border-radius: 0.15em;
+	margin: 0;
+	border-radius: 0.15em;
+	background-color: rgb(43 64 168);
+	padding: 0.35em;
+	color: white;
+	font-weight: 600;
+	text-align: center;
 }
 
 .zone2 {
-    margin: auto;
+	margin: auto;
 }
 
 .zone2 p,
 .zone2 table {
-    font-family: "Montserrat";
-    font-weight: 600;
-    background-color: white;
-    padding: 3.5%;
-    border: solid grey 1px;
-    border-radius: 0.5em;
-    margin: 0;
+	margin: 0;
+	border: solid grey 1px;
+	border-radius: 0.5em;
+	background-color: white;
+	padding: 3.5%;
+	font-weight: 600;
+	font-family: Montserrat;
 }
 
 p.zone2__name {
-    font-size: 1.5em;
-    border-radius: 0.5em 0.5em 0 0;
+	border-radius: 0.5em 0.5em 0 0;
+	font-size: 1.5em;
 }
 
 p.zone2__gender {
-    font-size: 1.5em;
-    border-radius: 0 0 0.5em 0;
-    border-top: none;
+	border-top: none;
+	border-radius: 0 0 0.5em;
+	font-size: 1.5em;
 }
 
 p.zone2__gender i {
-    color: grey;
-    font-style: normal;
-    font-weight: 300;
+	color: grey;
+	font-style: normal;
+	font-weight: 300;
 }
-
 
 p.zone2__dob,
 p.zone2__details {
-    border: none;
-    border-left: solid grey 1px;
-    border-radius: 0;
-    line-height: 1.1em;
-    background: linear-gradient(to right, hsla(0, 0%, 100%, 0.75) 50%, transparent);
-    background-repeat: no-repeat;
-    font-family: "JetBrains Mono";
+	border: none;
+	border-left: solid grey 1px;
+	border-radius: 0;
+	background: linear-gradient(
+		to right,
+		hsl(0deg 0% 100% / 75%) 50%,
+		transparent
+	);
+	background-repeat: no-repeat;
+	line-height: 1.1em;
+	font-family: "JetBrains Mono";
 }
 
 p.zone2__dob {
-    padding-bottom: 0;
-    font-weight: 600;
+	padding-bottom: 0;
+	font-weight: 600;
 }
 
 p.zone2__details {
-    color: grey;
-    font-weight: 300;
+	color: grey;
+	font-weight: 300;
 }
 
 .idcard table,
 .zone1 table {
-    table-layout: fixed;
-    width: 100%;
-    border-top-left-radius: 0;
-    padding: 0;
-    font-family: "JetBrains Mono";
-    padding-left: 0.5em;
-    color: grey;
+	border-top-left-radius: 0;
+	padding: 0;
+	padding-left: 0.5em;
+	width: 100%;
+	table-layout: fixed;
+	color: grey;
+	font-family: "JetBrains Mono";
 }
 
 .zone2 table.zone2__expiring {
-    /* border-color: rgb(43, 64, 168); */
-    margin-bottom: 1em;
+	/* border-color: rgb(43, 64, 168); */
+	margin-bottom: 1em;
 }
 
-
-
-
-
 .zone3 {
-    margin-left: auto;
+	margin-left: auto;
 }
 
 .zone3__image {
-    width: 80%;
-    margin-left: 2em;
-    border-radius: 5%;
-    box-shadow: #000 0 0 3px;
-    display: block;
+	display: block;
+	margin-left: 2em;
+	box-shadow: #000 0 0 3px;
+	border-radius: 5%;
+	width: 80%;
 }
 
 .profileField {
-    width: 32px;
-    height: 32px;
-    image-rendering: pixelated;
+	image-rendering: pixelated;
+	width: 32px;
+	height: 32px;
 }
 
 .profileBio {
-    margin-left: 40px;
-    width: 320px;
+	margin-left: 40px;
+	width: 320px;
 }
 
 .profileLexieSpeech {
-    font-size: 20px;
-    color: #dbc0ff;
-    text-shadow:
-        -1px -1px 0 #881832,
-        1px -1px 0 #881832,
-        -1px 1px 0 #881832,
-        1px 1px 0 #881832,
-        2px 3px 0 black;
+	color: #dbc0ff;
+	font-size: 20px;
+	text-shadow:
+		-1px -1px 0 #881832,
+		1px -1px 0 #881832,
+		-1px 1px 0 #881832,
+		1px 1px 0 #881832,
+		2px 3px 0 black;
 }
 
 .profileHazelSpeech {
-    font-size: 20px;
-    color: #ffd8c0;
-    text-shadow:
-        -1px -1px 0 #a02222,
-        1px -1px 0 #a02222,
-        -1px 1px 0 #a02222,
-        1px 1px 0 #a02222,
-        2px 3px 0 black;
+	color: #ffd8c0;
+	font-size: 20px;
+	text-shadow:
+		-1px -1px 0 #a02222,
+		1px -1px 0 #a02222,
+		-1px 1px 0 #a02222,
+		1px 1px 0 #a02222,
+		2px 3px 0 black;
 }
 
 .flex-wrap {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .flag {
-    width: 120px;
-
-    border-width: 3px;
-    border-radius: 10px;
-
-    margin: auto 6px 15px 6px;
-    box-shadow: 0px 4px 7px black;
+	margin: auto 6px 15px;
+	box-shadow: 0 4px 7px black;
+	border-width: 3px;
+	border-radius: 10px;
+	width: 120px;
 }

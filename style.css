@@ -6,26 +6,29 @@
 @import url(css/creations.css); */
 
 :root {
-    --id_height: 40vh;
-    --container-color: rgba(9, 14, 29, 0.8);
-    --container-color-b: rgba(9, 14, 29, 1);
-    --border-color: rgba(196, 210, 255, 0.5);
-    --link-color: #66b2ff;
-    --text-color: white;
+	--id_height: 40vh;
+	--id_width: 90vw;
+	--container-color: rgb(9 14 29 / 80%);
+	--container-color-b: rgb(9 14 29 / 100%);
+	--border-color: rgb(196 210 255 / 50%);
+	--border-color-opaque: rgb(196 210 255);
+	--link-color: #66b2ff;
+	--text-color: white;
 }
 
 @media (prefers-color-scheme: light) {
-    :root {
-        --container-color: rgba(204, 214, 248, 0.85);
-        --border-color: rgba(12, 64, 94, 0.8);
-        --link-color: #0165e9;
-        --text-color: black;
-    }
+	:root {
+		--container-color: rgb(204 214 248 / 85%);
+		--border-color: rgb(12 64 94 / 80%);
+		--link-color: #0165e9;
+		--text-color: black;
+	}
 }
 
 * {
-    /* background: #888; */
-    scrollbar-color: var(--border-color) var(--container-color);
+	/* background: #888; */
+	scrollbar-color: var(--border-color) var(--container-color);
+	scrollbar-gutter: stable;
 }
 
 /* @media only screen and (max-width: 960px) {
