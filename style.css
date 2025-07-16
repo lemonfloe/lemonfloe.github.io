@@ -28,7 +28,6 @@
 * {
 	/* background: #888; */
 	scrollbar-color: var(--border-color) var(--container-color);
-	scrollbar-gutter: stable;
 }
 
 /* @media only screen and (max-width: 960px) {
