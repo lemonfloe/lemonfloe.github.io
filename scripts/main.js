@@ -51,23 +51,16 @@ function getPathFromQuery() {
 }
 
 async function handleNav(index) {
-    currentPageIndex = index;
+	if (pagePaths[index] && pagePaths[index].startsWith('/.well-known/')) {
+        return;
+    }
+	currentPageIndex = index;
     currentPage = index;
     history.pushState(null, "", pagePaths[index]);
-    await fadeOut(pageContent);
     await changeContent(pageFiles[index]);
-    await fadeIn(pageContent);
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
-    let idx = getPageIndexFromPath(getPathFromQuery());
-    if (idx === -1) idx = 0;
-    currentPage = idx;
-    currentPageIndex = idx;
-    await changeContent(pageFiles[idx]);
-});
-
-window.addEventListener("popstate", async () => {
     let idx = getPageIndexFromPath(getPathFromQuery());
     if (idx === -1) idx = 0;
     currentPage = idx;
@@ -80,7 +73,7 @@ document.querySelectorAll(".nav__button").forEach((button, index) => {
 });
 
 function changeContent(contentURL) {
-    return fetch(contentURL)
+	return fetch(contentURL)
         .then(res => res.text())
         .then(cont => {
             var divPlaceholder = document.getElementById('pageContent');
@@ -95,39 +88,6 @@ function changeContent(contentURL) {
         })
 }
 
-function fadeOut(element) {
-    return new Promise((resolve) => {
-        let opacity = 1;
-        function fade() {
-            opacity -= 0.06;
-            if (opacity <= 0) {
-                element.style.opacity = 0;
-                resolve();
-            } else {
-                element.style.opacity = opacity;
-                requestAnimationFrame(fade);
-            }
-        }
-        fade();
-    });
-}
-
-function fadeIn(element) {
-    return new Promise((resolve) => {
-        let opacity = null;
-        function fade() {
-            opacity += 0.015;
-            if (opacity >= 1) {
-                element.style.opacity = 1;
-                resolve();
-            } else {
-                element.style.opacity = opacity;
-                requestAnimationFrame(fade);
-            }
-        }
-        fade();
-    });
-}
 // #endregion
 
 // #region Creations Tracklist
