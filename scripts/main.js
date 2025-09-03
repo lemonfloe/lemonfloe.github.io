@@ -40,20 +40,14 @@ function getPageIndexFromPath(path) {
 }
 
 function getPathFromQuery() {
-    if (window.location.pathname.startsWith('/.well-known')) {
-        return window.location.pathname;
-    }
-	else {
-		const query = window.location.search;
-		if (query.startsWith('?/')) {
-			return '/' + query.slice(2);
-		}
-		if (query.startsWith('?')) {
-			return '/' + query.slice(1);
-		}
-		return window.location.pathname;
-		}
-    
+	const query = window.location.search;
+	if (query.startsWith('?/')) {
+		return '/' + query.slice(2);
+	}
+	if (query.startsWith('?')) {
+		return '/' + query.slice(1);
+	}
+	return window.location.pathname;
 }
 
 async function handleNav(index) {
@@ -63,17 +57,23 @@ async function handleNav(index) {
     await changeContent(pageFiles[index]);
 }
 
-window.addEventListener("DOMContentLoaded", async () => {
-    if (window.location.pathname.startsWith('/.well-known')) return;
-	let idx = getPageIndexFromPath(getPathFromQuery());
-	if (idx === -1) idx = 0;
+function loadPageFromPath() {
+    let idx = getPageIndexFromPath(getPathFromQuery());
+    if (idx === -1) return;
     currentPage = idx;
     currentPageIndex = idx;
-    await changeContent(pageFiles[idx]);
-});
+    changeContent(pageFiles[idx]);
+}
+
+window.addEventListener("DOMContentLoaded", loadPageFromPath);
+window.addEventListener("popstate", loadPageFromPath);
 
 document.querySelectorAll(".nav__button").forEach((button, index) => {
-    button.addEventListener("click", () => handleNav(index));
+    button.addEventListener("click", () => {
+        if (index >= 0 && index < pageFiles.length) {
+            handleNav(index);
+        }
+    });
 });
 
 function changeContent(contentURL) {
