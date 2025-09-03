@@ -43,14 +43,17 @@ function getPathFromQuery() {
     if (window.location.pathname.startsWith('/.well-known')) {
         return window.location.pathname;
     }
-    const query = window.location.search;
-    if (query.startsWith('?/')) {
-        return '/' + query.slice(2);
-    }
-    if (query.startsWith('?')) {
-        return '/' + query.slice(1);
-    }
-    return window.location.pathname;
+	else {
+		const query = window.location.search;
+		if (query.startsWith('?/')) {
+			return '/' + query.slice(2);
+		}
+		if (query.startsWith('?')) {
+			return '/' + query.slice(1);
+		}
+		return window.location.pathname;
+		}
+    
 }
 
 async function handleNav(index) {
@@ -61,7 +64,8 @@ async function handleNav(index) {
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
-    let idx = getPageIndexFromPath(getPathFromQuery());
+    if (window.location.pathname.startsWith('/.well-known')) return;
+	let idx = getPageIndexFromPath(getPathFromQuery());
 	if (idx === -1) idx = 0;
     currentPage = idx;
     currentPageIndex = idx;
