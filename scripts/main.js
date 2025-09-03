@@ -40,6 +40,9 @@ function getPageIndexFromPath(path) {
 }
 
 function getPathFromQuery() {
+    if (window.location.pathname.startsWith('/.well-known')) {
+        return window.location.pathname;
+    }
     const query = window.location.search;
     if (query.startsWith('?/')) {
         return '/' + query.slice(2);
@@ -47,13 +50,10 @@ function getPathFromQuery() {
     if (query.startsWith('?')) {
         return '/' + query.slice(1);
     }
-    return window.location.pathname
+    return window.location.pathname;
 }
 
 async function handleNav(index) {
-	if (pagePaths[index] && pagePaths[index].startsWith('/.well-known/')) {
-        return;
-    }
 	currentPageIndex = index;
     currentPage = index;
     history.pushState(null, "", pagePaths[index]);
@@ -62,7 +62,7 @@ async function handleNav(index) {
 
 window.addEventListener("DOMContentLoaded", async () => {
     let idx = getPageIndexFromPath(getPathFromQuery());
-    if (idx === -1) idx = 0;
+	if (idx === -1) idx = 0;
     currentPage = idx;
     currentPageIndex = idx;
     await changeContent(pageFiles[idx]);
