@@ -2,6 +2,7 @@
 #background {
 	position: fixed;
 	z-index: -2;
+
 	animation:
 		background--breathe 30s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
 		background--rotate 45s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
@@ -16,6 +17,7 @@
 	position: fixed;
 	top: 0;
 	z-index: -2;
+	backdrop-filter: blur(1px);
 	background: linear-gradient(
 		to right,
 		rgb(0 0 0 / 40%),
@@ -54,18 +56,21 @@
 
 .snow1 {
 	opacity: 0.9;
+	filter: blur(1.5px);
 	animation-duration: 18s;
 	background-image: url("/assets/backgrounds/snow1.png");
 }
 
 .snow2 {
 	opacity: 0.6;
+	filter: blur(2.75px);
 	animation-duration: 28s;
 	background-image: url("/assets/backgrounds/snow2.png");
 }
 
 .snow3 {
 	opacity: 0.3;
+	filter: blur(3.5px);
 	animation-duration: 42s;
 	background-image: url("/assets/backgrounds/snow3.png");
 }
@@ -176,10 +181,11 @@ body {
 }
 
 .container {
+	backdrop-filter: blur(6px);
 	margin: 25px 2vw;
-	box-shadow: rgb(0 0 0 / 70%) 0 0 8px;
+	box-shadow: rgb(0 0 0 / 70%) 0 2px 7px;
 	border: solid var(--border-color) 3px;
-	border-radius: 14px;
+	border-radius: 0.6em;
 	background-color: var(--container-color);
 	padding: 12px;
 }

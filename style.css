@@ -8,10 +8,10 @@
 :root {
 	--id_height: 40vh;
 	--id_width: 90vw;
-	--container-color: rgb(9 14 29 / 80%);
+	--container-color: rgba(9, 13, 32, 0.8);
 	--container-color-b: rgb(9 14 29 / 100%);
-	--border-color: rgb(196 210 255 / 50%);
-	--border-color-opaque: rgb(196 210 255);
+	--border-color: rgba(87, 114, 163, 0.5);
+	--border-color-opaque: rgb(196 210 255 / 50%);
 	--link-color: #66b2ff;
 	--text-color: white;
 }
