@@ -7,7 +7,6 @@
 	border-radius: calc(var(--id_height) / 17);
 
 	background-size: 100%;
-	/* background-image: url(/assets/idcard/light-grove.png); */
 	background-color: #eff1fd;
 	aspect-ratio: 3.375 / 2.125;
 	height: 90vh;

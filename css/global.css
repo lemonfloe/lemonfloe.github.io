@@ -5,7 +5,7 @@
 	animation:
 		background--breathe 30s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
 		background--rotate 45s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-	background-image: url("/assets/backgrounds/darkwinter.png");
+	background-image: url("/assets/backgrounds/darkwinter.webp");
 	background-position: center bottom;
 	background-size: cover;
 	background-repeat: no-repeat;
