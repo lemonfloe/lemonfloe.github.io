@@ -7,7 +7,7 @@
 	border-radius: calc(var(--id_height) / 17);
 
 	background-size: 100%;
-	background-color: #eff1fd;
+	background-color: #e7eeff;
 	aspect-ratio: 3.375 / 2.125;
 	height: 90vh;
 	max-height: var(--id_height);
@@ -25,7 +25,7 @@
 	bottom: 0;
 	opacity: 0.5;
 	/* z-index: 2; */
-	mix-blend-mode: darken;
+	mix-blend-mode: multiply;
 	width: 100%;
 	height: auto;
 	object-fit: cover;
@@ -95,9 +95,9 @@ p.zone2__gender {
 }
 
 p.zone2__gender i {
-	color: grey;
+	color: rgb(100, 100, 100);
 	font-style: normal;
-	font-weight: 300;
+	font-weight: 400;
 }
 
 p.zone2__dob,
@@ -105,11 +105,7 @@ p.zone2__details {
 	border: none;
 	border-left: solid grey 1px;
 	border-radius: 0;
-	background: linear-gradient(
-		to right,
-		hsl(0deg 0% 100% / 75%) 50%,
-		transparent
-	);
+	background: linear-gradient(to right, hsl(0deg 0% 100%) 15%, transparent);
 	background-repeat: no-repeat;
 	line-height: 1.1em;
 	font-family: "JetBrains Mono";
@@ -121,6 +117,7 @@ p.zone2__dob {
 }
 
 p.zone2__details {
+	/* filter: brightness(0); */
 	color: grey;
 	font-weight: 300;
 }
@@ -138,7 +135,13 @@ p.zone2__details {
 
 .zone2 table.zone2__expiring {
 	/* border-color: rgb(43, 64, 168); */
-	margin-bottom: 1em;
+	margin-top: 0.6em;
+	margin-bottom: 0;
+	border-radius: 1em;
+	height: 2em;
+	color: rgb(43 64 168);
+	font-weight: 600;
+	font-family: Montserrat;
 }
 
 .zone3 {
