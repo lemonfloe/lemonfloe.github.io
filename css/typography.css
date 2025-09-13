@@ -16,6 +16,10 @@
 	font-family: Splash, cursive;
 }
 
+.centered {
+	text-align: center;
+}
+
 a:link {
 	color: var(--link-color);
 	text-decoration: none;
