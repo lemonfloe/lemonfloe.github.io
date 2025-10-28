@@ -1,3 +1,14 @@
+window.copyTextToClipboard = async function copyTextToClipboard() {
+	const textToCopy = "lemonfloe";
+	try {
+		await navigator.clipboard.writeText(textToCopy);
+		console.log("Text copied to clipboard:", textToCopy);
+		var popup = document.getElementById("copyPopup");
+	} catch (err) {
+		console.error("Failed to copy: ", err);
+	}
+}
+
 // #region autoplayer
 const audio = document.getElementById('autoplayer__audio');
 audio.volume = 0.5;

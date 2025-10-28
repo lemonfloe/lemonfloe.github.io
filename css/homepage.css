@@ -15,7 +15,6 @@
 .links-wrap {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 }
 
 .links-button {
@@ -23,11 +22,10 @@
 	width: 25%;
 	max-width: 80px;
 	height: 100%;
-	line-height: 0;
 }
 
 .links-icon {
-	filter: drop-shadow(2px 6px 4px #000);
+	filter: drop-shadow(0 4px 2px #000);
 	width: 100%;
 	height: auto;
 }
@@ -35,4 +33,16 @@
 .links-button:hover .links-icon {
 	transform: translateY(-9px);
 	transition: 0.15s cubic-bezier(0, 1.4, 0.5, 1.4);
+}
+
+.popup {
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	margin-left: 0;
+	width: max-content;
+}
+
+.popup .popup__text {
+	color: red;
 }

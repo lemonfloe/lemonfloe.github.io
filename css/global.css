@@ -190,7 +190,7 @@ body {
 	padding: 12px;
 }
 
-.container__text {
+.container .container__text {
 	margin: auto;
 	width: 650px;
 	max-width: 100%;
