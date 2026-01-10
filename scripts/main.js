@@ -10,20 +10,20 @@ window.copyTextToClipboard = async function copyTextToClipboard() {
 }
 
 // #region autoplayer
-const audio = document.getElementById('autoplayer__audio');
-audio.volume = 0.5;
+// const audio = document.getElementById('autoplayer__audio');
+// audio.volume = 0.5;
 
-const volumeSlider = document.getElementById('autoplayer__volume');
-if (volumeSlider) {
-    volumeSlider.value = audio.volume;
-    volumeSlider.addEventListener('input', () => {
-        audio.volume = volumeSlider.value;
-    });
-}
-
-document.getElementById('autoplayer__button').addEventListener('click', () => {
-    audio.paused ? audio.play() : audio.pause();
-})
+// const volumeSlider = document.getElementById('autoplayer__volume');
+// if (volumeSlider) {
+//     volumeSlider.value = audio.volume;
+//     volumeSlider.addEventListener('input', () => {
+//         audio.volume = volumeSlider.value;
+//     });
+// }
+// 
+// document.getElementById('autoplayer__button').addEventListener('click', () => {
+//     audio.paused ? audio.play() : audio.pause();
+// })
 // #endregion
 
 // #region Nav Content Swap
