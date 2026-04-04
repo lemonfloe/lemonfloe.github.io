@@ -1,13 +1,13 @@
-window.copyTextToClipboard = async function copyTextToClipboard() {
-	const textToCopy = "lemonfloe";
-	try {
-		await navigator.clipboard.writeText(textToCopy);
-		console.log("Text copied to clipboard:", textToCopy);
-		var popup = document.getElementById("copyPopup");
-	} catch (err) {
-		console.error("Failed to copy: ", err);
-	}
-};
+// window.copyTextToClipboard = async function copyTextToClipboard() {
+// 	const textToCopy = "lemonfloe";
+// 	try {
+// 		await navigator.clipboard.writeText(textToCopy);
+// 		console.log("Text copied to clipboard:", textToCopy);
+// 		var popup = document.getElementById("copyPopup");
+// 	} catch (err) {
+// 		console.error("Failed to copy: ", err);
+// 	}
+// };
 
 // #region autoplayer
 // const audio = document.getElementById('autoplayer__audio');
@@ -89,7 +89,7 @@ function changeContent(contentURL) {
 			var divPlaceholder = document.getElementById("pageContent");
 			divPlaceholder.innerHTML = "";
 			divPlaceholder.insertAdjacentHTML("afterbegin", cont);
-			setupAudioMotionAnalyzer();
+			// setupAudioMotionAnalyzer();
 			if (contentURL === "pages/creations.html") {
 				setupCreationsAudio();
 				generateGallery();
@@ -102,70 +102,70 @@ function changeContent(contentURL) {
 
 // #region Creations Tracklist
 // import AudioMotionAnalyzer from "https://cdn.skypack.dev/audiomotion-analyzer?min";
-import { audioFiles } from "./audioFiles.js";
+// import { audioFiles } from "./audioFiles.js";
 
-function setupAudioMotionAnalyzer() {
-	const wavContainer = document.getElementById("wavcontainer");
-	if (wavContainer) {
-		const audioMotion = new AudioMotionAnalyzer(
-			document.getElementById("wavcontainer"),
-			{
-				source: document.getElementById("audiosource"),
-				alphaBars: false,
-				ansiBands: true,
-				barSpace: 0,
-				bgAlpha: 0,
-				channelLayout: "dual-combined",
-				colorMode: "gradient",
-				fadePeaks: false,
-				fftSize: 8192,
-				fillAlpha: 0.7,
-				frequencyScale: "log",
-				gradientLeft: "orangered",
-				gradientRight: "steelblue",
-				gravity: 0.1,
-				ledBars: false,
-				linearAmplitude: true,
-				linearBoost: 4,
-				lineWidth: 0,
-				loRes: false,
-				lumiBars: false,
-				maxDecibels: -25,
-				maxFPS: 0,
-				maxFreq: 22000,
-				minDecibels: -85,
-				minFreq: 10,
-				mirror: 0,
-				mode: 10,
-				noteLabels: false,
-				outlineBars: false,
-				overlay: false,
-				peakFadeTime: 0,
-				peakHoldTime: 0,
-				peakLine: true,
-				radial: false,
-				radialInvert: false,
-				radius: 0,
-				reflexAlpha: 0,
-				reflexBright: 0,
-				reflexFit: false,
-				reflexRatio: 0,
-				roundBars: false,
-				showBgColor: false,
-				// showFPS: false,
-				showPeaks: false,
-				showScaleX: false,
-				showScaleY: false,
-				smoothing: 0.1,
-				spinSpeed: -5,
-				splitGradient: false,
-				trueLeds: false,
-				volume: 0.7,
-				weightingFilter: "C",
-			},
-		);
-	}
-}
+// function setupAudioMotionAnalyzer() {
+// 	const wavContainer = document.getElementById("wavcontainer");
+// 	if (wavContainer) {
+// 		const audioMotion = new AudioMotionAnalyzer(
+// 			document.getElementById("wavcontainer"),
+// 			{
+// 				source: document.getElementById("audiosource"),
+// 				alphaBars: false,
+// 				ansiBands: true,
+// 				barSpace: 0,
+// 				bgAlpha: 0,
+// 				channelLayout: "dual-combined",
+// 				colorMode: "gradient",
+// 				fadePeaks: false,
+// 				fftSize: 8192,
+// 				fillAlpha: 0.7,
+// 				frequencyScale: "log",
+// 				gradientLeft: "orangered",
+// 				gradientRight: "steelblue",
+// 				gravity: 0.1,
+// 				ledBars: false,
+// 				linearAmplitude: true,
+// 				linearBoost: 4,
+// 				lineWidth: 0,
+// 				loRes: false,
+// 				lumiBars: false,
+// 				maxDecibels: -25,
+// 				maxFPS: 0,
+// 				maxFreq: 22000,
+// 				minDecibels: -85,
+// 				minFreq: 10,
+// 				mirror: 0,
+// 				mode: 10,
+// 				noteLabels: false,
+// 				outlineBars: false,
+// 				overlay: false,
+// 				peakFadeTime: 0,
+// 				peakHoldTime: 0,
+// 				peakLine: true,
+// 				radial: false,
+// 				radialInvert: false,
+// 				radius: 0,
+// 				reflexAlpha: 0,
+// 				reflexBright: 0,
+// 				reflexFit: false,
+// 				reflexRatio: 0,
+// 				roundBars: false,
+// 				showBgColor: false,
+// 				// showFPS: false,
+// 				showPeaks: false,
+// 				showScaleX: false,
+// 				showScaleY: false,
+// 				smoothing: 0.1,
+// 				spinSpeed: -5,
+// 				splitGradient: false,
+// 				trueLeds: false,
+// 				volume: 0.7,
+// 				weightingFilter: "C",
+// 			},
+// 		);
+// 	}
+// }
 
 function setupCreationsAudio() {
 	const audioElement = document.getElementById("audiosource");
