@@ -4,26 +4,31 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link href="style.css?v=04040725" rel="stylesheet" type="text/css" media="all" />
-	<title>Lemonfloe | Cryosolis</title>
+	<link href="style.css?v=04050508" rel="stylesheet" type="text/css" media="all" />
+	<title>Lemonfloe</title>
 	<link rel="icon" type="image/x-icon" href="assets/favicon.png" />
 
 	<!-- Lets my liveserver auto refresh on saves to these files below -->
-	<!-- <link href="css/animation.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/animation.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/creations.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/gaming.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/global.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/homepage.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/profiles.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/typography.css" rel="stylesheet" type="text/css" media="all" /> -->
+	<link href="css/typography.css" rel="stylesheet" type="text/css" media="all" />
 
 </head>
 
 <body>
 	<div id="overlay">
-		<img id="overlay-img" src="" alt="Full-size image" />
 	</div>
-
+	<div id="background"></div>
+	<div id="background__dim"></div>
+	<div id="snowholder">
+		<div class="snow snow1"></div>
+		<div class="snow snow2"></div>
+		<div class="snow snow3"></div>
+	</div>
 	<!-- <div class="autoplayer">
 		<div>
 			<button id="autoplayer__button">
@@ -40,26 +45,57 @@
 			<source src="assets/music/winteragain_photographs.ogg" type="audio/ogg">
 		</audio>
 	</div> -->
+	
+	<div id="centeredContent">
+		<nav>
+			<img src="assets/logo.webp" alt="Lemonfloe Logo"/>
+			<div class="navLeft">
+				<button class="redirectButton">🏠 Home</button>
+				<button class="redirectButton">🐾 Profiles</button>
+				<button class="redirectButton">🎨 Creations</button>
+				<button class="redirectButton">🎮 Gaming</button>
+			</div>
+			<div class="navRight">
+				<!-- <div class="links-wrap">
+					<div class="links-button">
+						<a href="https://www.youtube.com/@lemonfloe">
+							<img class="links-icon" src="/assets/links/youtube.webp" />
+						</a>
+					</div>
+					<div class="links-button">
+						<a href="https://bsky.app/profile/lemonfloe.github.io">
+							<img class="links-icon" src="/assets/links/bsky.webp" />
+						</a>
+					</div>
+					<div class="links-button">
+						<a href="https://www.instagram.com/lemonfloe">
+							<img class="links-icon" src="/assets/links/instagram.webp" />
+						</a>
+					</div>
+					<div class="links-button">
+						<a href="https://x.com/lemonfloe">
+							<img class="links-icon" src="/assets/links/twitter.webp" />
+						</a>
+					</div>
+					<div class="links-button"> Discord
+						<button onclick='copyTextToClipboard()' style="cursor: pointer;">
+							<img class="links-icon" src="/assets/links/youtube.webp" />
+						</button>
+						<span class="popup container" id="discordCopyPopup">Username copied to clipboard</span>
+					</div>
+				</div> -->
+			</div>
+		</nav>
 
-	<div id="background"></div>
-	<div id="background__dim"></div>
-	<div id="snowholder">
-		<div class="snow snow1"></div>
-		<div class="snow snow2"></div>
-		<div class="snow snow3"></div>
+			<div id="pageContent">
+		</div>
+
+		<footer>
+			<p>© 2026 Lemonfloe. All rights reserved.</p>
+		</footer>
 	</div>
-
-	<nav>
-		<button class="nav__button">Home</button>
-		<button class="nav__button">Profiles</button>
-		<button class="nav__button">Creations</button>
-		<button class="nav__button">Gaming</button>
-	</nav>
-
-	<div id="pageContent">
-	</div>
-
-	<script type="module" src="scripts/main.js?v=04040725"></script>
+	
+	<script type="module" src="scripts/main.js?v=04050508"></script>
 </body>
 
 </html>

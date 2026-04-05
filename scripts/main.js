@@ -74,7 +74,7 @@ function loadPageFromPath() {
 window.addEventListener("DOMContentLoaded", loadPageFromPath);
 window.addEventListener("popstate", loadPageFromPath);
 
-document.querySelectorAll(".nav__button").forEach((button, index) => {
+document.querySelectorAll(".redirectButton").forEach((button, index) => {
 	button.addEventListener("click", () => {
 		if (index >= 0 && index < pageFiles.length) {
 			handleNav(index);
