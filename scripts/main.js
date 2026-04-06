@@ -20,7 +20,7 @@
 //         audio.volume = volumeSlider.value;
 //     });
 // }
-//
+
 // document.getElementById('autoplayer__button').addEventListener('click', () => {
 //     audio.paused ? audio.play() : audio.pause();
 // })
@@ -38,7 +38,7 @@ const pagePaths = ["/", "/profiles", "/creations", "/gaming"];
 
 let currentPageIndex = null;
 let currentPage = 0;
-const pageContent = document.getElementById("pageContent");
+const pageBody = document.getElementById("pageBody");
 
 function getPageIndexFromPath(path) {
 	if (path.length > 1 && path.endsWith("/")) path = path.slice(0, -1);
@@ -86,7 +86,7 @@ function changeContent(contentURL) {
 	return fetch(contentURL)
 		.then((res) => res.text())
 		.then((cont) => {
-			var divPlaceholder = document.getElementById("pageContent");
+			var divPlaceholder = document.getElementById("pageBody");
 			divPlaceholder.innerHTML = "";
 			divPlaceholder.insertAdjacentHTML("afterbegin", cont);
 			// setupAudioMotionAnalyzer();
@@ -195,7 +195,7 @@ function setupCreationsAudio() {
 }
 // #endregion
 
-// #region Creations Gallery
+// #region Gallery
 import { galleryLinks } from "./galleryLinks.js";
 
 function generateGallery() {
@@ -216,7 +216,7 @@ function generateGallery() {
 			caption = fileName;
 		}
 
-		const thumb = `/assets/gallery/thumbnails/${fileName}_thumb.jpg`;
+		const thumb = `/assets/gallery/${fileName}.jpg`;
 
 		const div = document.createElement("div");
 		div.className = "galleryFrame";
@@ -235,7 +235,7 @@ function generateGallery() {
 		const button = e.target.closest(".image-button");
 		if (!button) return;
 
-		const fullSrc = button.getAttribute("data-full");
+		let fullSrc = button.getAttribute("data-full");
 		if (!fullSrc) return;
 
 		overlayImg.src = fullSrc;
@@ -266,15 +266,14 @@ function generateGallery() {
 // var button = document.getElementById("button");
 // var audio = document.getElementById("player");
 
-//       button.addEventListener('click', function(){
-//         if(audio.paused){
-//         audio.play();
-//         button.innerHTML = '<i class="fa fa-pause"></i>';
-
-//         } else {
-//         audio.pause();
-//         button.innerHTML = '<i class="fa fa-play"></i>';
-//         }
-//       });
+// button.addEventListener("click", function () {
+// 	if (audio.paused) {
+// 		audio.play();
+// 		button.innerHTML = '<i class="fa fa-pause"></i>';
+// 	} else {
+// 		audio.pause();
+// 		button.innerHTML = '<i class="fa fa-play"></i>';
+// 	}
+// });
 
 // #endregion

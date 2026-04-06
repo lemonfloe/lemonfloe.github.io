@@ -1,8 +1,20 @@
 export const galleryLinks = [
-  "/assets/gallery/xx-xx-xx Tentatek.jpg",
-  "/assets/gallery/xx-xx-xx Perfect Fish Opener.jpg",
-  "/assets/gallery/xx-xx-xx My Name is Mercedes Benz.jpg",
-  "/assets/gallery/xx-xx-xx Eugene (Halley Labs).jpg",
-  "/assets/gallery/xx-xx-xx Candy Man.jpg",
-  "/assets/gallery/xx-xx-xx Bloody Antlers.jpg"
+  "/assets/gallery/2024-11 Yandeere.jpg",
+  "/assets/gallery/2024 Ominous.jpg",
+  "/assets/gallery/2022-01 Eugene (Halley Labs).jpg",
+  "/assets/gallery/2021-12 My Name is Mercedes Benz.jpg",
+  "/assets/gallery/2020-08 TQBF Cover.jpg",
+  "/assets/gallery/0000-00 tqbf.jpg",
+  "/assets/gallery/0000-00 You n Me.jpg",
+  "/assets/gallery/0000-00 Terryfying Process.jpg",
+  "/assets/gallery/0000-00 Tentatek.jpg",
+  "/assets/gallery/0000-00 River Girl.jpg",
+  "/assets/gallery/0000-00 Perfect Fish Opener.jpg",
+  "/assets/gallery/0000-00 Laylaga.jpg",
+  "/assets/gallery/0000-00 Deuteronomy.jpg",
+  "/assets/gallery/0000-00 Cyberpunk Machine.jpg",
+  "/assets/gallery/0000-00 Cant Do Shit Right.jpg",
+  "/assets/gallery/0000-00 Candy Man.jpg",
+  "/assets/gallery/0000-00 Bloody Antlers.jpg",
+  "/assets/gallery/0000-00 Alef Smoke.jpg"
 ];
