@@ -21,7 +21,7 @@
 	background: linear-gradient(
 		to right,
 		rgb(0 0 0 / 40%),
-		transparent 20% 85%,
+		transparent 10% 85%,
 		rgb(0 0 0 / 40%)
 	);
 	width: 100vw;
@@ -76,7 +76,6 @@ html {
 	overflow-y: scroll;
 	scrollbar-gutter: stable;
 }
-
 body {
 	margin: 0;
 	background-color: black;
@@ -84,7 +83,7 @@ body {
 	color: var(--text-color);
 	font-weight: 500;
 	font-size: 1rem;
-	line-height: 1.4;
+	line-height: 1.5;
 	font-family: Montserrat;
 	text-shadow:
 		1px 2px 2px black,
@@ -92,50 +91,17 @@ body {
 	/* cursor: url('/assets/cursor.png'); */
 }
 
-#centeredContent {
-	margin: auto;
-	box-shadow:
-		rgb(0 0 0 / 70%) 1px 0 10px,
-		rgb(0 0 0 / 70%) -1px 0 10px;
-	width: 100%;
-	max-width: 80rem;
-}
-
-#pageBody {
-	backdrop-filter: blur(0.9rem);
-	margin: auto;
-	background-color: var(--content-color);
-	min-height: calc(100vh - (64px + 10rem));
-}
-
-/* #region nav */
+/* #region headers and footers */
 nav {
 	display: flex;
 	position: sticky;
 	top: 0;
 	z-index: 10;
 	border-bottom: solid var(--border-color) 2px;
-	background-color: var(--container-color-opaque);
+	background-color: var(--nav-color);
 	height: 60px;
+	color: white;
 }
-
-footer {
-	display: flex;
-	position: relative;
-	bottom: 0;
-	z-index: 10;
-	border-top: solid var(--border-color) 2px;
-	background-color: var(--container-color-opaque);
-	width: 100%;
-	min-height: 10rem;
-}
-footer p {
-	margin: auto;
-	color: color-mix(in srgb, var(--border-color) 100%, white 20%);
-	font-size: 0.9rem;
-	text-shadow: 1px 1px 2px black;
-}
-
 nav a,
 nav button {
 	/* display: flex; */
@@ -162,7 +128,7 @@ nav svg {
 	margin-left: -0.4rem;
 	height: 1.3rem;
 	object-view-box: 0 0 24 24;
-	color: var(--text-color);
+	color: white;
 }
 
 .navRight {
@@ -170,29 +136,45 @@ nav svg {
 	margin-left: auto;
 }
 
-.links-wrap {
+footer {
+	display: flex;
+	position: relative;
+	bottom: 0;
+	z-index: 10;
+	border-top: solid var(--border-color) 2px;
+	background-color: var(--nav-color);
+	width: 100%;
+	min-height: 10rem;
+}
+footer p {
+	margin: auto;
+	margin-top: 3rem;
+	color: color-mix(in srgb, var(--border-color) 100%, white 20%);
+	font-size: 0.9rem;
+	text-shadow: 1px 1px 2px black;
+}
+/* #endregion */
+
+/* #region social links */
+.socials-wrap {
 	display: flex;
 	justify-content: center;
 }
-
-.links-button {
+.socials-button {
 	margin: 0 0.4em;
 	width: 25%;
 	max-width: 80px;
 	height: 100%;
 }
-
-.links-icon {
+.socials-icon {
 	filter: drop-shadow(0 4px 2px #000);
 	width: 100%;
 	height: auto;
 }
-
-.links-button:hover .links-icon {
+.socials-button:hover .socials-icon {
 	transform: translateY(-9px);
 	transition: 0.15s cubic-bezier(0, 1.4, 0.5, 1.4);
 }
-
 /* #endregion */
 
 /* #region autoplayer */
@@ -233,7 +215,7 @@ nav svg {
 		-2px -2px var(--border-color2);
 	border: solid var(--border-color) 2px;
 	border-radius: 8px;
-	background: linear-gradient(180deg, var(--container-color) 30%, black);
+	background: linear-gradient(180deg, var(--scroll-bg-color) 30%, black);
 	padding: 2px 10px;
 	color: var(--text-color);
 	font-size: 12px;
@@ -245,6 +227,23 @@ nav svg {
 	width: 100px;
 }
 /* #endregion autoplayer */
+
+/* #region common */
+#centeredContent {
+	margin: auto;
+	box-shadow:
+		rgb(0 0 0 / 70%) 1px 0 10px,
+		rgb(0 0 0 / 70%) -1px 0 10px;
+	width: 100%;
+	max-width: 80rem;
+}
+
+#pageBody {
+	backdrop-filter: blur(0.9rem);
+	margin: auto;
+	background-color: var(--page-color);
+	min-height: calc(100vh - (64px + 10rem));
+}
 
 .container {
 	margin: auto;
@@ -258,16 +257,41 @@ nav svg {
 	/* max-width: 95%; */
 }
 
+.gif img {
+	border: color-mix(in srgb, var(--border-color) 100%, black 20%) ridge 3px;
+	border-radius: 5px;
+	width: 12rem;
+}
+/* #endregion */
+
+@media (width <=900px) {
+	/* body {
+		font-size: 0.8rem;
+	} */
+	nav {
+		position: unset;
+		top: 0;
+		width: 100%;
+	}
+	nav span {
+		display: none;
+	}
+}
+
 @media (prefers-color-scheme: light) {
+	#background {
+		background-image: url("/assets/backgrounds/lightfall.webp");
+	}
 	body {
 		background-color: white;
 		text-shadow: 1px 1px 1px rgb(0 0 0 / 15%);
 	}
-}
-
-@media (width <=768px) {
-	body {
-		font-size: 0.875rem;
+	#pageBody {
+		background-image: linear-gradient(
+			to bottom,
+			rgba(255, 234, 242, 0.7),
+			rgba(253, 206, 224, 0.8)
+		);
 	}
 }
 

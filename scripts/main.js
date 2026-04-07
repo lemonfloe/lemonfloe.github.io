@@ -221,7 +221,7 @@ function generateGallery() {
 		const div = document.createElement("div");
 		div.className = "galleryFrame";
 		div.innerHTML = `
-            <button class="image-button" data-full="${link}">
+            <button class="image-button" loading="lazy" data-full="${link}">
                 <img class="thumbnail" src="${thumb}" alt="${caption}" />
             </button>
         `;

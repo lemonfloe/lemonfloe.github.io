@@ -10,26 +10,30 @@
 	--id_height: 40vh;
 	--id_width: 90vw;
 
-	--container-color: rgba(9, 13, 32, 0.8);
-	--container-color-opaque: rgb(9 14 29 / 100%);
-	--content-color: rgba(22, 33, 54, 0.7);
+	--scroll-bg-color: rgba(9, 13, 32, 0.8);
+	--nav-color: rgb(9 14 29 / 100%);
+	--page-color: rgba(22, 33, 54, 0.7);
 	--border-color: rgb(30, 42, 65);
-	--link-color: #6fb2ff;
+
 	--text-color: white;
+	--link-color: #6fb2ff;
 }
 
 @media (prefers-color-scheme: light) {
 	:root {
-		--container-color: rgb(204 214 248 / 85%);
-		--border-color: rgb(12 64 94 / 80%);
+		--scroll-bg-color: rgb(204 214 248 / 85%);
+		--nav-color: rgb(134, 68, 59);
+		/* rgba(255, 239, 253, 0.7); */
+
+		--border-color: rgb(112, 44, 39);
+		--text-color: rgb(17, 17, 17);
 		--link-color: #0165e9;
-		--text-color: black;
 	}
 }
 
 * {
 	/* background: #888; */
-	scrollbar-color: var(--border-color) var(--container-color);
+	scrollbar-color: var(--border-color) var(--scroll-bg-color);
 }
 
 /* @media only screen and (max-width: 960px) {
