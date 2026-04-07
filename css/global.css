@@ -276,6 +276,18 @@ footer p {
 	nav span {
 		display: none;
 	}
+	html,
+	body {
+		max-width: 100%;
+		overflow-x: hidden;
+	}
+	#centeredContent {
+		width: 100%;
+		overflow-x: hidden;
+	}
+	.container {
+		width: calc(100% - 32px);
+	}
 }
 
 @media (prefers-color-scheme: light) {
