@@ -76,6 +76,9 @@ html {
 	overflow-y: scroll;
 	scrollbar-gutter: stable;
 }
+html:has(#overlay.active) {
+	overflow: hidden;
+}
 body {
 	margin: 0;
 	background-color: black;
