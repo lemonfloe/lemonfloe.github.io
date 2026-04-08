@@ -82,7 +82,7 @@ html:has(#overlay.active) {
 body {
 	margin: 0;
 	background-color: black;
-
+	overflow-anchor: none;
 	color: var(--text-color);
 	font-weight: 500;
 	font-size: 1rem;
@@ -99,7 +99,7 @@ nav {
 	display: flex;
 	position: sticky;
 	top: 0;
-	z-index: 10;
+	z-index: 100;
 	border-bottom: solid var(--border-color) 2px;
 	background-color: var(--nav-color);
 	height: 60px;
@@ -141,10 +141,8 @@ nav svg {
 
 footer {
 	display: flex;
-	position: relative;
 	bottom: 0;
-	z-index: 10;
-	border-top: solid var(--border-color) 2px;
+	z-index: 100;
 	background-color: var(--nav-color);
 	width: 100%;
 	min-height: 10rem;
@@ -156,6 +154,7 @@ footer p {
 	font-size: 0.9rem;
 	text-shadow: 1px 1px 2px black;
 }
+
 /* #endregion */
 
 /* #region social links */
@@ -180,59 +179,94 @@ footer p {
 }
 /* #endregion */
 
-/* #region autoplayer */
-.autoplayer {
-	position: fixed;
-	bottom: 5px;
-	left: 5px;
-	z-index: 20;
-	cursor: pointer;
+/* #region musicBar */
+#musicBar {
+	display: flex;
+	position: sticky;
+	bottom: 0;
+	flex-direction: row;
+	z-index: 100;
+	border-top: solid var(--border-color) 2px;
+	background-color: var(--nav-color);
+	width: 100%;
+	height: 36px;
+	min-height: unset;
+	font-size: 0.75rem;
 }
-.autoplayer button {
-	position: fixed;
-	bottom: 12px;
-	left: 9px;
-	cursor: var(--cursor-pointer);
-	box-shadow:
-		2px 2px var(--border-color1),
-		-2px -2px var(--border-color2);
-	border-radius: 40px;
-	background: linear-gradient(
-		180deg,
-		var(--bg-color-opacity1) 40%,
-		var(--bg-color-opacity2)
+
+#musicBar button {
+	width: 100px;
+}
+
+#musicBar svg {
+	position: relative;
+	left: 33px;
+	width: 30px;
+}
+
+#musicBar img {
+}
+
+#musicbar__nameprog-container {
+	position: relative;
+	background-color: color-mix(
+		in srgb,
+		var(--nav-color) 100%,
+		var(--border-color) 25%
 	);
+	width: calc(100% - 230px);
+}
+
+#musicBar__trackname {
+	position: relative;
+	z-index: 1;
+	padding: 0.5rem 0.7rem;
+	width: 100%;
+}
+#musicBar__trackname i {
+	font-style: normal;
+}
+#musicBar__progress {
+	position: absolute;
+	top: 0;
+	transform-origin: left;
+	background-color: #2f2b68;
+	width: 100%;
+	height: 100%;
+}
+
+#musicBar__volume {
+	width: 100px;
+	/* -webkit-appearance: none; */
+}
+#musicBar__volume:hover {
+	/* make scrolling adjust volume */
+	min-width: 0;
+}
+/* .musicBar button {
+	bottom: 32px;
+	left: 0;
+	border-radius: 40px;
 	padding: 1px 4px 0;
-	width: 35px;
-	height: 35px;
 	color: var(--text-color);
 	font-weight: bold;
 	font-size: 18px;
-}
-.autoplayer a {
+} */
+#musicBar a {
 	position: fixed;
 	bottom: 9px;
 	left: 55px;
-	box-shadow:
-		2px 2px var(--border-color1),
-		-2px -2px var(--border-color2);
-	border: solid var(--border-color) 2px;
-	border-radius: 8px;
-	background: linear-gradient(180deg, var(--scroll-bg-color) 30%, black);
+
 	padding: 2px 10px;
-	color: var(--text-color);
 	font-size: 12px;
 }
-.autoplayer input {
-	position: fixed;
-	bottom: 54px;
-	left: 50px;
-	width: 100px;
-}
-/* #endregion autoplayer */
+
+/* #endregion musicBar */
 
 /* #region common */
 #centeredContent {
+	position: relative;
+	z-index: 10;
 	margin: auto;
 	box-shadow:
 		rgb(0 0 0 / 70%) 1px 0 10px,

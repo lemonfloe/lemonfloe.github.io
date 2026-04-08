@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link href="style.css?v=04070812" rel="stylesheet" type="text/css" media="all" />
+	<link href="style.css?v=04080926" rel="stylesheet" type="text/css" media="all" />
 	<title>Lemonfloe</title>
 	<link rel="icon" type="image/x-icon" href="assets/favicon.png" />
 
@@ -30,22 +30,6 @@
 		<div class="snow snow2"></div>
 		<div class="snow snow3"></div>
 	</div>
-	<!-- <div class="autoplayer">
-		<div>
-			<button id="autoplayer__button">
-				<img width="35px" height="35px" src="assets/music/pause-and-play.png" />
-			</button>
-		</div>
-
-		<input id="autoplayer__volume" type="range" min="0" max="1" step="0.01" value="0.5" title="Volume" />
-
-		<a id="nowPlaying" target="_blank" href="https://www.youtube.com/watch?v=NLtMqHLoxeU">
-			i have no photographs of my most cherished moments<br><i>deuteronomy</i></a>
-
-		<audio loop id="autoplayer__audio">
-			<source src="assets/music/winteragain_photographs.ogg" type="audio/ogg">
-		</audio>
-	</div> -->
 	
 	<div id="centeredContent">
 		<nav>
@@ -69,6 +53,7 @@
 				</button>
 			</div>
 			<div class="navRight">
+				
 				<!-- <div class="socials-wrap">
 					<div class="socials-button">
 						<a href="https://www.youtube.com/@lemonfloe">
@@ -100,15 +85,36 @@
 			</div>
 		</nav>
 
-			<div id="pageBody">
+		<div id="pageBody">
 		</div>
 
+		<div id="musicBar">
+				
+			<button id="musicBar__playStatus">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Design Icons by Pictogrammers - https://github.com/Templarian/MaterialDesign/blob/master/LICENSE --><path fill="currentColor" d="M3 5v14l8-7m2 7h3V5h-3m5 0v14h3V5"/></svg>
+			</button>
+			<img id="musicBar__Cover" src="assets/music/evaporation_alt.jpg" />
+			<div id="musicbar__nameprog-container">
+				<div id="musicBar__trackname">
+					<span><i>MΣΣBΣΣ a.k.a KAZUHIRO ABO — </i>Countless grains arranged in a grid are waving randomly</span>
+				</div>
+				<div id="musicBar__progress"></div>
+			</div>
+			<input id="musicBar__volume" type="range" min="0" max="1" step="0.05" value="0.5" title="Volume" />
+			
+			<!-- <a id="nowPlaying" target="_blank" href="https://youtu.be/szdWkrRHpAw">
+				Countless grains arranged in a grid are waving randomly<br><i>MΣΣBΣΣ a.k.a KAZUHIRO ABO</i></a> -->
+			<audio loop id="musicBar__audio">
+				<source src="assets/music/evaporation_countlessgrains.ogg" type="audio/ogg">
+			</audio>
+
+		</div>
 		<footer>
 			<p>© 2026 Lemonfloe. All rights reserved.</p>
 		</footer>
 	</div>
 	
-	<script type="module" src="scripts/main.js?v=04070812"></script>
+	<script type="module" src="scripts/main.js?v=04080926"></script>
 </body>
 
 </html>

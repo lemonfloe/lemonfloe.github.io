@@ -9,23 +9,6 @@
 // 	}
 // };
 
-// #region autoplayer
-// const audio = document.getElementById('autoplayer__audio');
-// audio.volume = 0.5;
-
-// const volumeSlider = document.getElementById('autoplayer__volume');
-// if (volumeSlider) {
-//     volumeSlider.value = audio.volume;
-//     volumeSlider.addEventListener('input', () => {
-//         audio.volume = volumeSlider.value;
-//     });
-// }
-
-// document.getElementById('autoplayer__button').addEventListener('click', () => {
-//     audio.paused ? audio.play() : audio.pause();
-// })
-// #endregion
-
 // #region Nav Content Swap
 const pageFiles = [
 	"pages/homepage.html",
@@ -261,19 +244,38 @@ function generateGallery() {
 }
 // #endregion
 
-// #region wip autoplayer
+// #region musicBar
+const audio = document.getElementById("musicBar__audio");
 
-// var button = document.getElementById("button");
-// var audio = document.getElementById("player");
+const playButton = document.getElementById("musicBar__playStatus");
+if (playButton) {
+	playButton.addEventListener("click", () => {
+		audio.paused ? audio.play() : audio.pause();
+		console.log("user clicked play/pause");
+	});
+}
 
-// button.addEventListener("click", function () {
-// 	if (audio.paused) {
-// 		audio.play();
-// 		button.innerHTML = '<i class="fa fa-pause"></i>';
-// 	} else {
-// 		audio.pause();
-// 		button.innerHTML = '<i class="fa fa-play"></i>';
-// 	}
-// });
+audio.volume = 0.2;
+const volumeSlider = document.getElementById("musicBar__volume");
+if (volumeSlider) {
+	volumeSlider.value = audio.volume;
+	volumeSlider.addEventListener("input", () => {
+		audio.volume = volumeSlider.value;
+	});
+}
+
+audio.currentTime;
+const seekbar = document.getElementById("musicBar__progress");
+if (seekbar) {
+	seekbar.style.transform = `scaleX(0)`;
+	audio.addEventListener("timeupdate", () => {
+		if (audio.paused === false) {
+			console.log("audio is playing");
+			const musicProgress = audio.currentTime / audio.duration;
+			seekbar.style.transform = `scaleX(${musicProgress})`;
+			console.log(musicProgress);
+		}
+	});
+}
 
 // #endregion

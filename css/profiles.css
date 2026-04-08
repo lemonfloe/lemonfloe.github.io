@@ -33,12 +33,12 @@
 }
 
 .idcard__left {
-	z-index: 1;
+	z-index: 20;
 	width: 40%;
 }
 
 .idcard__right {
-	z-index: 1;
+	z-index: 20;
 	margin: auto 4%;
 	width: 60%;
 }
